@@ -4,3 +4,15 @@ ul,
 ol {
   margin: 0;
   padding: 0; }
+
+main {
+  display: block; }
+
+#header {
+  height: 135px;
+  background-color: red;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0; }
+  #header ul {
+    list-style-type: none; }
