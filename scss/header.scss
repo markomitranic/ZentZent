@@ -1,31 +1,77 @@
 #header {
-    margin: 0 auto;
-    padding: 0;
+    width: 100%;
     background-image: url(/images/header-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom left;
 
-	.wrapper {
-	    height: 135px;
-	    // background-color: red;
-	    max-width: 1050px;
-	    margin: 0 auto;
-	}
-    ul {
-    	list-style-type: none;
-      float: left;
+    .wrapper {
+        height: 135px;
+        max-width: 1050px;
+        margin: 0 auto;
     }
-    a {
-    	&:after {
-      	display: none;
-    	}
-      &:hover {
-        dispaly: none;
-      }
+    .top,
+    .bottom {
+        width: 100%;
+        clear: both;
+        float: left;
     }
-  nav {
-    float: right;
-    display: inline-block;
-  }
+    .top {
+        margin: 20px 0;
+    }
+    .logo {
+        float: left;
+    }
+    .lang {
+        float: left;
+        font-size: 22px;
+        span {
+            float: left;
+            margin: 0 6px;
+        }
+        a {
+            float: left;
+            display: block;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .searchbox-header {
+       float: right;
+       position: relative;
+       input[type="text"] {
+            width: 195px;
+            background: transparent;
+            border: 1px solid $black;
+        	height: 20px;
+        	padding: 0 10px;
+        	@include input-placeholder($black);
+            font-family: 'Crimson Text', serif;
+       }
+       .icon-search {
+           position: absolute;
+           top: 3px;
+           right: 10px;
+           width: 16px;
+           height: 16px;
+           display: inline-block;
+           background: url(../images/ico-search.png) no-repeat 0 0;
+       }
+    }
+    .main-nav {
+        float: right;
+        margin-top: 10px;
+        li {
+            float: left;
+            margin-right: 50px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        a {
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+    }
 }

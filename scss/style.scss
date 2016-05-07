@@ -1,5 +1,6 @@
 @import "reset";
-
+@import "variables";
+@import "mixins";
 
 // Global Page Styles (fonts, links etc)
 @import "global";
@@ -13,5 +14,3 @@
 @import "body";
 // Footer Style
 @import "footer";
-
-

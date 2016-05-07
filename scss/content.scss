@@ -1,34 +1,35 @@
 .page-content {
-		
+
 	h1 {
 
 	}
 
 	h2 {
-		
+
 	}
 
 	h3 {
-		
+
 	}
 
 	h4 {
-		
+
 	}
 
 	h5 {
-		
+
 	}
 
 	h6 {
-		
+
 	}
 
 	a {
 		color: black;
 		text-decoration: none;
-		
-		&:after {
+		/*write this block of code to be selector specific, this way it's affecting all <a< tags*/
+
+		/*&:after {
 			content: " ";
 		    display: block;
 		    width: 100%;
@@ -40,6 +41,6 @@
 		}
 		&:hover:after {
 			border-bottom: 5px solid black;
-		}
+		}*/
 	}
 }

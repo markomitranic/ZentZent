@@ -1,52 +1,289 @@
+/*----------  reset
+------------------------------------------------------------------------------*/
 @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700);
-html,
-body,
-ul,
-ol {
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
   margin: 0;
   padding: 0; }
+
+html {
+  -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]) {
+  display: none; }
+
+[hidden] {
+  display: none; }
+
+/*----------  base reset
+------------------------------------------------------------------------------*/
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+html, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222; }
+
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4; }
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none; }
+
+/*----------  links
+------------------------------------------------------------------------------*/
+a {
+  text-decoration: none; }
+
+a:focus, a:hover, a:active {
+  outline: none; }
+
+/*----------  typography
+------------------------------------------------------------------------------*/
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 0; }
+
+dfn {
+  font-style: italic; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+small {
+  font-size: 85%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/*----------  lists
+------------------------------------------------------------------------------*/
+nav ul,
+nav ol,
+ul,
+li {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0; }
+
+/*----------  Embedded content
+------------------------------------------------------------------------------*/
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+/*----------  forms
+------------------------------------------------------------------------------*/
+figure {
+  margin: 0; }
+
+form {
+  margin: 0; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+label {
+  cursor: pointer; }
+
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+  white-space: normal; }
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+button, input {
+  line-height: normal; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *width: 13px;
+  *height: 13px; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+/* Colors for form validity */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd; }
+
+input, textarea, select {
+  outline: none; }
+
+/*----------  tables
+------------------------------------------------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td {
+  vertical-align: top; }
+
+/*----------  chrome frame prompt
+------------------------------------------------------------------------------*/
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: black;
+  padding: 0.2em 0; }
+
+/*----------  clearfix
+------------------------------------------------------------------------------*/
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
 
 main {
   display: block; }
 
+/*----------  variables
+------------------------------------------------------------------------------*/
+/*----------  input placeholder
+------------------------------------------------------------------------------*/
 body {
   font-family: 'Crimson Text', serif; }
 
 a {
   color: black;
-  text-decoration: none; }
-  a:after {
-    content: " ";
-    display: block;
-    width: 100%;
-    position: relative;
-    bottom: 8px;
-    border-bottom: 5px solid #3adcb3;
-    opacity: 0.4;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out; }
-  a:hover:after {
-    border-bottom: 5px solid black; }
+  text-decoration: none;
+  /*write this block of code to be selector specific, this way it's affecting all <a< tags*/
+  /*&:after {
+		content: " ";
+		display: block;
+		width: 100%;
+		position: relative;
+		bottom: 8px;
+		border-bottom: 5px solid #3adcb3;
+		opacity: 0.4;
+		transition: 0.2s all ease-in-out;
+	}
+	&:hover:after {
+		border-bottom: 5px solid black;
+	}*/ }
 
 .page-content a {
   color: black;
-  text-decoration: none; }
-  .page-content a:after {
-    content: " ";
-    display: block;
-    width: 100%;
-    position: relative;
-    bottom: 8px;
-    border-bottom: 5px solid #3adcb3;
-    opacity: 0.4;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out; }
-  .page-content a:hover:after {
-    border-bottom: 5px solid black; }
+  text-decoration: none;
+  /*write this block of code to be selector specific, this way it's affecting all <a< tags*/
+  /*&:after {
+			content: " ";
+		    display: block;
+		    width: 100%;
+		    position: relative;
+		    bottom: 8px;
+		    border-bottom: 5px solid #3adcb3;
+		    opacity: 0.4;
+		    transition: 0.2s all ease-in-out;
+		}
+		&:hover:after {
+			border-bottom: 5px solid black;
+		}*/ }
 
 #header {
-  margin: 0 auto;
-  padding: 0;
+  width: 100%;
   background-image: url(/images/header-background.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,8 +292,61 @@ a {
     height: 135px;
     max-width: 1050px;
     margin: 0 auto; }
-  #header ul {
-    list-style-type: none; }
+  #header .top,
+  #header .bottom {
+    width: 100%;
+    clear: both;
+    float: left; }
+  #header .top {
+    margin: 20px 0; }
+  #header .logo {
+    float: left; }
+  #header .lang {
+    float: left;
+    font-size: 22px; }
+    #header .lang span {
+      float: left;
+      margin: 0 6px; }
+    #header .lang a {
+      float: left;
+      display: block; }
+      #header .lang a:hover {
+        text-decoration: underline; }
+  #header .searchbox-header {
+    float: right;
+    position: relative; }
+    #header .searchbox-header input[type="text"] {
+      width: 195px;
+      background: transparent;
+      border: 1px solid #000;
+      height: 20px;
+      padding: 0 10px;
+      font-family: 'Crimson Text', serif; }
+      #header .searchbox-header input[type="text"]::-webkit-input-placeholder {
+        color: #000; }
+      #header .searchbox-header input[type="text"]:-moz-placeholder {
+        color: #000; }
+      #header .searchbox-header input[type="text"]:-ms-input-placeholder {
+        color: #000; }
+    #header .searchbox-header .icon-search {
+      position: absolute;
+      top: 3px;
+      right: 10px;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background: url(../images/ico-search.png) no-repeat 0 0; }
+  #header .main-nav {
+    float: right;
+    margin-top: 10px; }
+    #header .main-nav li {
+      float: left;
+      margin-right: 50px; }
+      #header .main-nav li:last-of-type {
+        margin-right: 0; }
+    #header .main-nav a {
+      text-transform: uppercase;
+      font-size: 18px; }
 
 #body {
   margin: 0 auto;
