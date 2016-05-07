@@ -46,6 +46,7 @@
             border: 1px solid $black;
         	height: 20px;
         	padding: 0 10px;
+            font-size: 14px;
         	@include input-placeholder($black);
             font-family: 'Crimson Text', serif;
        }

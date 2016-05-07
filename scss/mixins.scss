@@ -1,6 +1,3 @@
-/*----------  input placeholder
-------------------------------------------------------------------------------*/
-
 @mixin input-placeholder ($placeholder-text-color) {
     &::-webkit-input-placeholder {
         @content;

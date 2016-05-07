@@ -1,5 +1,7 @@
 @import "reset";
 @import "variables";
+
+// Mixins
 @import "mixins";
 
 // Global Page Styles (fonts, links etc)
@@ -14,3 +16,6 @@
 @import "body";
 // Footer Style
 @import "footer";
+
+//Specific sidebar styles
+@import "sidebar";

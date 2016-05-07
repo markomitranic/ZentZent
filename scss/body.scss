@@ -1,6 +1,7 @@
 #body {
-	margin: 0 auto;
+	margin: 60px auto 0 auto;
 	max-width: 1050px;
+	min-height: 700px;
 	display: flex;
 
 	#sidebar {
@@ -9,5 +10,20 @@
 	#main {
 	   	width: calc(100% - 320px);
    		margin-left: 110px;
+
+   		.post-hero {
+   			
+   			img {
+				max-width: 730px;
+				max-height: 730px;
+   			}
+
+   			p {
+				font-style: italic;
+			    font-size: 170%;
+			    color: gray;
+			    margin: 20px 0 40px 0;
+   			}
+   		}
 	}
 }

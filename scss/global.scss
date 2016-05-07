@@ -1,50 +1,24 @@
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700);
-
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700);
 body {
 	font-family: 'Crimson Text', serif;
+	color: #444;
 }
 
 h1 {
-
-}
-
-h2 {
-
-}
-
-h3 {
-
-}
-
-h4 {
-
-}
-
-h5 {
-
-}
-
-h6 {
-
+    font-size: 150%;
+    text-transform: uppercase;
+    margin: 20px 0;
 }
 
 a {
 	color: black;
 	text-decoration: none;
+    background-color: rgba(58,220,179,0.2);
+    padding: 0 4px 2px 4px;
+    border-radius: 3px;
+    transition: 0.2s all ease-in-out;
 
-	/*write this block of code to be selector specific, this way it's affecting all <a< tags*/
-
-	/*&:after {
-		content: " ";
-		display: block;
-		width: 100%;
-		position: relative;
-		bottom: 8px;
-		border-bottom: 5px solid #3adcb3;
-		opacity: 0.4;
-		transition: 0.2s all ease-in-out;
+	&:hover {
+		background-color: rgba(29, 148, 118, 0.2);
 	}
-	&:hover:after {
-		border-bottom: 5px solid black;
-	}*/
 }
