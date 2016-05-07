@@ -1,0 +1,13 @@
+#body {
+	margin: 0 auto;
+	max-width: 1050px;
+	display: flex;
+
+	#sidebar {
+		width: 210px;
+	}
+	#main {
+	   	width: calc(100% - 330px);
+   		margin-left: 120px;
+	}
+}

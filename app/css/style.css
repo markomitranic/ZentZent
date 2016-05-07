@@ -41,3 +41,28 @@ a {
     margin: 0 auto; }
   #header ul {
     list-style-type: none; }
+
+#footer {
+  margin: 0 auto;
+  padding: 0;
+  background-image: url(/images/footer-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom left; }
+  #footer .wrapper {
+    height: 135px;
+    max-width: 1050px;
+    margin: 0 auto; }
+
+#body {
+  margin: 0 auto;
+  max-width: 1050px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  #body #sidebar {
+    width: 210px; }
+  #body #main {
+    width: calc(100% - 330px);
+    margin-left: 120px; }
