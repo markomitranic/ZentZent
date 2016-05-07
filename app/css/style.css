@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700);
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700);
 main {
   display: block; }
 
@@ -226,42 +227,38 @@ button {
   display: none; }
 
 body {
-  font-family: 'Crimson Text', serif; }
+  font-family: 'Crimson Text', serif;
+  color: #444; }
 
 a {
   color: black;
-  text-decoration: none; }
-  a:after {
-    content: " ";
-    display: block;
-    width: 100%;
-    position: relative;
-    bottom: 8px;
-    border-bottom: 5px solid #3adcb3;
-    opacity: 0.4;
-    -webkit-transition: 0.2s all ease-in-out;
-    transition: 0.2s all ease-in-out; }
-  a:hover:after {
-    border-bottom: 5px solid black; }
+  text-decoration: none;
+  background-color: rgba(58, 220, 179, 0.2);
+  padding: 0 4px 2px 4px;
+  border-radius: 3px;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out; }
+  a:hover {
+    background-color: rgba(29, 148, 118, 0.2); }
 
 .page-content {
   font-size: 18px;
   line-height: 30px; }
-  .page-content a {
-    color: black;
-    text-decoration: none; }
-    .page-content a:after {
-      content: " ";
-      display: block;
-      width: 100%;
-      position: relative;
-      bottom: 8px;
-      border-bottom: 5px solid #3adcb3;
-      opacity: 0.4;
-      -webkit-transition: 0.2s all ease-in-out;
-      transition: 0.2s all ease-in-out; }
-    .page-content a:hover:after {
-      border-bottom: 5px solid black; }
+  .page-content h2 {
+    font-size: 120%;
+    text-transform: uppercase;
+    margin: 30px 0; }
+  .page-content h3, .page-content h4, .page-content h5, .page-content h6 {
+    font-weight: 400;
+    margin: 30px; }
+  .page-content h3:before {
+    content: " » "; }
+  .page-content h4:before {
+    content: " »  » "; }
+  .page-content h5:before {
+    content: " »  »  » "; }
+  .page-content h6:before {
+    content: " »  »  »  » "; }
   .page-content code {
     background-color: #EFEFEF;
     border-radius: 3px;
@@ -310,6 +307,67 @@ a {
     width: 100%;
     height: auto;
     margin: 5px 0 30px 0; }
+  .page-content table {
+    margin: 0 30px 30px 30px;
+    font-size: 12px; }
+    .page-content table th, .page-content table tfoot td {
+      padding: 10px 15px;
+      background: #bbb !important;
+      border: 1px solid #999;
+      font-weight: normal;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      font-weight: 700; }
+    .page-content table td {
+      border: 1px solid #999;
+      padding: 10px 15px;
+      background: #ddd; }
+    .page-content table tr:nth-child(odd) td {
+      background: #eee; }
+    .page-content table td, .page-content table td img {
+      vertical-align: top; }
+  .page-content ol {
+    margin-bottom: 30px;
+    counter-reset: preview-ol; }
+    .page-content ol li {
+      list-style: none;
+      padding: 3px 0; }
+    .page-content ol li:before {
+      content: counter(preview-ol);
+      counter-increment: preview-ol;
+      color: #666;
+      border: 1px solid #666;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 20px;
+      line-height: 26px; }
+  .page-content ul {
+    margin-bottom: 30px; }
+    .page-content ul li {
+      list-style: none;
+      padding: 3px 0; }
+    .page-content ul li:before {
+      content: '~ ';
+      font-size: 20px;
+      color: #999;
+      margin-right: 3px; }
+  .page-content blockquote {
+    font-style: italic;
+    line-height: 28px;
+    font-size: 18px;
+    margin: 30px; }
+    .page-content blockquote:before {
+      content: "“";
+      display: inline-block;
+      font-size: 30px; }
+    .page-content blockquote:after {
+      content: "”";
+      display: inline-block;
+      font-size: 30px; }
 
 #header {
   margin: 0 auto;

@@ -2,47 +2,31 @@
 	font-size: 18px;
     line-height: 30px;
 
-	h1 {
-
-	}
-
 	h2 {
-		
+	    font-size: 120%;
+		text-transform: uppercase;
+		margin: 30px 0; 
 	}
 
-	h3 {
-		
+	h3, h4, h5, h6 {
+		font-weight: 400;
+		margin: 30px; 
 	}
 
-	h4 {
-		
+	h3:before {
+		content: " » ";
 	}
 
-	h5 {
-		
+	h4:before {
+		content: " »  » ";
 	}
 
-	h6 {
-		
+	h5:before {
+		content: " »  »  » ";
 	}
 
-	a {
-		color: black;
-		text-decoration: none;
-		
-		&:after {
-			content: " ";
-		    display: block;
-		    width: 100%;
-		    position: relative;
-		    bottom: 8px;
-		    border-bottom: 5px solid #3adcb3;
-		    opacity: 0.4;
-		    transition: 0.2s all ease-in-out;
-		}
-		&:hover:after {
-			border-bottom: 5px solid black;
-		}
+	h6:before {
+		content: " »  »  »  » ";
 	}
 
 	p {
@@ -71,8 +55,7 @@
 		}
 	}
 
-
-	// Special IMAGE styling
+	// Special IMAGE styling for layouts and floats
 	.alignleft {
 	    float: left;
 	    margin:0 15px 30px 0;
@@ -116,5 +99,92 @@
 	    width:100%;
 	    height:auto;
 	    margin:5px 0 30px 0;
+	}
+
+	// Table styles
+	table {
+        margin: 0 30px 30px 30px;
+	    font-size: 12px;
+
+		th, tfoot td {
+		    padding: 10px 15px;
+		    background: #bbb!important;
+		    border: 1px solid #999;
+		    font-weight: normal;
+		    text-transform: uppercase;
+		    text-align: left;
+	    	white-space: nowrap;
+	    	font-weight: 700;
+		}
+
+		td {
+		    border: 1px solid #999;
+		    padding: 10px 15px;
+		    background: #ddd;
+		}
+
+		tr:nth-child(odd) td {
+		    background: #eee;
+		}
+
+		td, td img {
+		    vertical-align: top;
+		}
+	}
+
+	// Lists
+	ol {
+	    margin-bottom: 30px;
+	    counter-reset: preview-ol;
+
+	    li {
+		    list-style: none;
+		    padding: 3px 0;
+		}
+
+		li:before {
+		    content: counter(preview-ol);
+		    counter-increment: preview-ol;
+		    color: #666;
+		    border: 1px solid #666;
+		    border-radius: 50%;
+		    width: 26px;
+		    height: 26px;
+		    display: inline-block;
+		    text-align: center;
+		    margin-right: 20px;
+		    line-height: 26px;
+		}
+	}
+	ul {
+    	margin-bottom: 30px;
+
+    	li {
+		    list-style: none;
+		    padding: 3px 0;
+		}
+		li:before {
+		    content: '~ ';
+		    font-size: 20px;
+		    color: #999;
+		    margin-right: 3px;
+		}
+	}
+	blockquote {
+	    font-style: italic;
+	    line-height: 28px;
+	    font-size: 18px;
+	    margin: 30px;
+
+	    &:before {
+	    	content: "“";
+	    	display: inline-block;
+    		font-size: 30px;
+	    }
+	    &:after {
+	    	content: "”";
+	    	display: inline-block;
+    		font-size: 30px;
+	    }
 	}
 }
