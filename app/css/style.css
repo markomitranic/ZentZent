@@ -29,10 +29,15 @@ a {
     border-bottom: 5px solid black; }
 
 #header {
-  height: 135px;
-  background-color: red;
-  max-width: 1050px;
   margin: 0 auto;
-  padding: 0; }
+  padding: 0;
+  background-image: url(/images/header-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom left; }
+  #header .wrapper {
+    height: 135px;
+    max-width: 1050px;
+    margin: 0 auto; }
   #header ul {
     list-style-type: none; }
