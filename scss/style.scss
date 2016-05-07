@@ -1,8 +1,12 @@
 @import "reset";
 
-// Main page style Section
-// Global Styles (fonts, links etc)
+
+// Global Page Styles (fonts, links etc)
 @import "global";
+// Specific styles for the page CONTENT div.
+@import "content";
+
+
 // Header Style
 @import "header";
 // General Body styles
