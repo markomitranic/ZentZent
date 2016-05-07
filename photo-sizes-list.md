@@ -2,3 +2,4 @@
 [size] [crop] [description]
 
 [730x730] [false] [hero image za pojedinacni clanak]
+[150x150] [true] [related slike za sidebar] [x2]
