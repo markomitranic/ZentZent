@@ -14,14 +14,18 @@
 	}
     ul {
     	list-style-type: none;
+      float: left;
     }
     a {
     	&:after {
-    		display: none;
+      	display: none;
     	}
       &:hover {
-        disply: none;
+        dispaly: none;
       }
     }
-
+  nav {
+    float: right;
+    display: inline-block;
+  }
 }
