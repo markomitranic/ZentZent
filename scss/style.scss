@@ -1,4 +1,13 @@
 @import "reset";
 
-// Main page style
+// Main page style Section
+// Global Styles (fonts, links etc)
+@import "global";
+// Header Style
 @import "header";
+// Footer Style
+@import "footer";
+
+
+// General Body styles
+@import "body";

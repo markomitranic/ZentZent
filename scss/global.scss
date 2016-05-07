@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700);
+
+body {
+	font-family: 'Crimson Text', serif;
+}
+
+h1 {
+
+}
+
+h2 {
+	
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+h5 {
+	
+}
+
+h6 {
+	
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	
+	&:after {
+		content: " ";
+	    display: block;
+	    width: 100%;
+	    position: relative;
+	    bottom: 8px;
+	    border-bottom: 5px solid #3adcb3;
+	    opacity: 0.4;
+	    transition: 0.2s all ease-in-out;
+	}
+	&:hover:after {
+		border-bottom: 5px solid black;
+	}
+}
