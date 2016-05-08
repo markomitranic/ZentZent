@@ -385,21 +385,21 @@ a {
   width: 28px;
   height: 28px;
   background: url(../images/icons-sprite.png) no-repeat;
-  background-position: 0 0;
+  background-position: -48px 0;
   background-size: 105px 28px; }
 
 .icon-twitter {
   width: 28px;
   height: 28px;
   background: url(../images/icons-sprite.png) no-repeat;
-  background-position: 0 0;
+  background-position: -77px 0;
   background-size: 105px 28px; }
 
 .icon-facebook {
   width: 28px;
   height: 28px;
   background: url(../images/icons-sprite.png) no-repeat;
-  background-position: 0 0;
+  background-position: -19px 0;
   background-size: 105px 28px; }
 
 #header {
@@ -407,7 +407,8 @@ a {
   background-image: url(/images/header-background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom left; }
+  background-position: bottom left;
+  text-shadow: 0px 0px 1px #9c9c9c; }
   #header a {
     color: #444;
     background-color: transparent;
@@ -500,7 +501,6 @@ a {
         #header .wrapper .main-nav li a {
           text-transform: uppercase;
           font-size: 20px;
-          text-shadow: 0px 0px 1px #9c9c9c;
           padding: 0 4px 2px 4px;
           -webkit-transition: 0.2s all ease-in-out;
           transition: 0.2s all ease-in-out; }
@@ -535,13 +535,18 @@ a {
   background-image: url(/images/footer-background.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom left; }
+  background-position: bottom left;
+  font-size: 22px;
+  line-height: 30px;
+  text-shadow: 0px 0px 1px #9c9c9c; }
   #footer a {
     color: #444;
     background-color: transparent;
     padding: 0; }
+    #footer a:hover {
+      text-decoration: underline; }
   #footer .wrapper {
-    height: 235px;
+    height: 195px;
     max-width: 1050px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -560,6 +565,28 @@ a {
     #footer .wrapper nav {
       width: 200px;
       text-align: right; }
+      #footer .wrapper nav ul {
+        width: auto; }
+        #footer .wrapper nav ul li {
+          width: auto; }
+          #footer .wrapper nav ul li a {
+            width: auto; }
+    #footer .wrapper .footer-contact {
+      width: 450px; }
+      #footer .wrapper .footer-contact address {
+        letter-spacing: 1px; }
+    #footer .wrapper .social-sharing {
+      width: 140px;
+      text-align: right; }
+      #footer .wrapper .social-sharing li {
+        float: right;
+        margin: 7px; }
+        #footer .wrapper .social-sharing li span {
+          display: block;
+          -webkit-transition: 0.2s opacity ease-in-out;
+          transition: 0.2s opacity ease-in-out; }
+          #footer .wrapper .social-sharing li span:hover {
+            opacity: 0.5; }
 
 .sidebar-related {
   width: 150px;
