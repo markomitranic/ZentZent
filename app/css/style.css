@@ -358,7 +358,7 @@ a {
     .page-content ul li:before {
       content: '~ ';
       font-size: 20px;
-      color: #999;
+      color: #666;
       margin-right: 3px; }
   .page-content blockquote {
     font-style: italic;
@@ -506,7 +506,7 @@ a {
     #body #main .post-hero p {
       font-style: italic;
       font-size: 170%;
-      color: gray;
+      color: #444;
       margin: 20px 0 40px 0; }
 
 #footer {

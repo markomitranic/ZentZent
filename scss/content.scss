@@ -145,7 +145,7 @@
 		li:before {
 		    content: counter(preview-ol);
 		    counter-increment: preview-ol;
-		    color: #666;
+		    color: $light-gray;
 		    border: 1px solid #666;
 		    border-radius: 50%;
 		    width: 26px;
@@ -166,7 +166,7 @@
 		li:before {
 		    content: '~ ';
 		    font-size: 20px;
-		    color: #999;
+		    color: $light-gray; // was #999
 		    margin-right: 3px;
 		}
 	}
