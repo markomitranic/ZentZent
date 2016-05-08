@@ -25,11 +25,22 @@
 
         @media (max-width: $large) {
             width: 100%;
+            flex-wrap: wrap;
+            height: auto;
         }
 
         nav {
             width: 200px;
             text-align: right;
+
+            @media (max-width: $medium) {
+                width: 150px;
+            }
+            @media (max-width: $small) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 40px;
+            }
 
             ul {
                 width: auto;
@@ -46,6 +57,16 @@
         .footer-contact {
             width: 450px;
 
+            @media (max-width: $medium) {
+                margin-left: 20px;
+                width: 430px;
+            }
+            @media (max-width: $small) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
             address {
                 letter-spacing: 1px;
             }
@@ -53,6 +74,14 @@
         .social-sharing {
             width: 140px;
             text-align: right;
+
+            @media (max-width: $small) {
+                width: 100%;
+                margin-bottom: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
             li {
                 float: right;
