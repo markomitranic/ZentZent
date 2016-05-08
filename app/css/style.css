@@ -509,7 +509,7 @@ a {
             background-color: rgba(29, 148, 118, 0.4); }
 
 #body {
-  margin: 60px auto 0 auto;
+  margin: 60px auto 100px auto;
   max-width: 1050px;
   min-height: 700px;
   display: -webkit-box;
