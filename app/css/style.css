@@ -421,12 +421,24 @@ a {
     max-width: 1050px;
     margin: 0 auto;
     position: relative; }
+    @media (max-width: 1050px) {
+      #header .wrapper {
+        width: 100%; } }
+    @media (max-width: 767px) {
+      #header .wrapper {
+        height: 50px; } }
     #header .wrapper .lang-nav {
       font-size: 22px;
       display: block;
       position: absolute;
       top: 27px;
       left: 10px; }
+      @media (max-width: 1050px) {
+        #header .wrapper .lang-nav {
+          left: 40px; } }
+      @media (max-width: 950px) {
+        #header .wrapper .lang-nav {
+          display: none; } }
       #header .wrapper .lang-nav li {
         display: inline; }
         #header .wrapper .lang-nav li.active a {
@@ -447,6 +459,12 @@ a {
       padding: 0;
       -webkit-transition: 1.5s all ease-in-out;
       transition: 1.5s all ease-in-out; }
+      @media (max-width: 1050px) {
+        #header .wrapper .searchbox-header {
+          right: 40px; } }
+      @media (max-width: 950px) {
+        #header .wrapper .searchbox-header {
+          display: none; } }
       #header .wrapper .searchbox-header:hover {
         width: 198px;
         border-color: #444;
@@ -476,12 +494,40 @@ a {
       position: absolute;
       bottom: 23px;
       left: 8px; }
+      @media (max-width: 1050px) {
+        #header .wrapper #header-logo img {
+          left: 40px; } }
+      @media (max-width: 950px) {
+        #header .wrapper #header-logo img {
+          top: 14px;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%);
+          bottom: initial; } }
+      @media (max-width: 767px) {
+        #header .wrapper #header-logo img {
+          left: 10px;
+          top: 10px;
+          -webkit-transform: none;
+                  transform: none;
+          height: 30px;
+          width: auto; } }
     #header .wrapper .main-nav {
       height: 20px;
       width: 710px;
       position: absolute;
       right: 10px;
       bottom: 25px; }
+      @media (max-width: 1050px) {
+        #header .wrapper .main-nav {
+          right: 40px;
+          width: calc(100% - 320px); } }
+      @media (max-width: 950px) {
+        #header .wrapper .main-nav {
+          width: calc(100% - 80px); } }
+      @media (max-width: 767px) {
+        #header .wrapper .main-nav {
+          display: none; } }
       #header .wrapper .main-nav ul {
         display: -webkit-box;
         display: -webkit-flex;
@@ -546,7 +592,8 @@ a {
   line-height: 30px;
   text-shadow: 0px 0px 1px #9c9c9c; }
   #footer a:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #444; }
   #footer .wrapper {
     height: 195px;
     max-width: 1050px;
