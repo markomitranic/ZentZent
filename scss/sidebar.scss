@@ -2,8 +2,18 @@
 	width: 150px;
     margin: 0 auto 0 0;
 
+    @media (max-width: $small) {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
 	article {
 		margin-bottom: 40px;
+		text-align: center;
+		min-width: 100px;
 
 		a {
 		    &:hover {
@@ -12,6 +22,11 @@
 			img {
 				max-width: 150px;
 				max-height: 150px;
+
+			    @media (max-width: $small) {
+			        width: 64px;
+			        height: 64px;
+			    }
 			}
 			h2 {
 			    text-transform: uppercase;

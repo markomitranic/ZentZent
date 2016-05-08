@@ -23,6 +23,10 @@
 	    margin: 0 auto;
         padding-top: 40px;
 
+        @media (max-width: $large) {
+            width: 100%;
+        }
+
         nav {
             width: 200px;
             text-align: right;

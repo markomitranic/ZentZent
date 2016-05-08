@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Zent</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/print.css" media="print">
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -31,6 +32,35 @@
                 <li><a href="#">Podrži nas</a></li>
             </ul>
         </nav>
+
+        <div id="mobile-menu">
+	    	<div class="menu-wrapper">
+	     	   <button class="hamburger">
+	          		<ul>
+	            		<li></li>
+	                	<li></li>
+	            	</ul>
+	            </button>
+	        </div>
+        	<div id="menu">
+	            <ul>
+	                <li class="active"><a href="home.html">O nama</a></li>
+	                <li><a href="zent.html">Zent</a></li>
+	                <li><a href="zentoteka.html">Zentoteka</a></li>
+	                <li><a href="#">Pretplati se</a></li>
+	                <li><a href="#">Podrži nas</a></li>
+	            </ul>
+	            <hr>
+	            <ul class="lang-nav-mobile">
+		            <li class="active"><a href="#" class="active">sr</a></li>
+		            <li><a href="#">eng</a></li>
+		        </ul>
+		        <hr>
+		        <p>Pretraga:</p>
+		        <input type="text"/>
+	        </div>
+        </div>
+
 	</div>
 </header>
 
@@ -234,5 +264,6 @@
 </footer>
 
 <script src="js/html5shiv-printshiv.min.js"></script>
+<script src="js/mobile-menu.js"></script>
 </body>
 </html>

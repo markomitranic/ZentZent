@@ -3,13 +3,31 @@
 	max-width: 1050px;
 	min-height: 700px;
 	display: flex;
+	flex-wrap: wrap;
+
+    @media (max-width: $large) {
+        width: 100%;
+        margin-top: 20px;
+    }
 
 	#sidebar {
 		width: 210px;
+
+	    @media (max-width: $small) {
+	        width: 100%;
+	    }
 	}
 	#main {
 	   	width: calc(100% - 320px);
    		margin-left: 110px;
+
+	    @media (max-width: $small) {
+	        width: 100%;
+	        margin: 0 50px;
+	    }
+	    @media (max-width: $mobile) {
+	        margin: 0 10px;
+	    }
 
    		.post-hero {
 		    margin-bottom: 80px;
@@ -17,6 +35,13 @@
    			img {
 				max-width: 100%;
 				max-height: 390px;
+			 
+			    @media (max-width: $mobile) {
+			        width: 100%;
+				    height: auto;
+				    text-align: center;
+				    max-height: initial;
+				}
    			}
 
    			p {
