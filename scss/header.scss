@@ -5,11 +5,78 @@
     background-size: cover;
     background-position: bottom left;
 
+    // Reset the link color
+    a {
+        color: #444;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+
     .wrapper {
         height: 135px;
         max-width: 1050px;
         margin: 0 auto;
+        position: relative;
+
+        .lang-nav {
+            font-size: 22px;
+            display: block;
+            position: absolute;
+            top: 27px;
+            left: 10px;
+
+            li {
+                display: inline;
+
+                &.active a {
+                    text-decoration: underline;
+                }
+                &:after {
+                    content: " / ";
+                    display: inline;
+                }
+                &:last-child:after {
+                    display: none;
+                }
+            }
+        }
+        
+        .searchbox-header {
+           float: right;
+           position: relative;
+
+            input[type="text"] {
+                width: 195px;
+                background: transparent;
+                border: 1px solid $black;
+                height: 20px;
+                padding: 0 10px;
+                font-size: 14px;
+                @include input-placeholder($black);
+                font-family: 'Crimson Text', serif;
+           }
+           .icon-search {
+               position: absolute;
+               top: 3px;
+               right: 10px;
+               width: 16px;
+               height: 16px;
+               display: inline-block;
+               background: url(../images/ico-search.png) no-repeat 0 0;
+           }
+        }
+
+
+
+
+
+
+
+
+
     }
+
     .top,
     .bottom {
         width: 100%;
@@ -22,44 +89,8 @@
     .logo {
         float: left;
     }
-    .lang {
-        float: left;
-        font-size: 22px;
-        span {
-            float: left;
-            margin: 0 6px;
-        }
-        a {
-            float: left;
-            display: block;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-    .searchbox-header {
-       float: right;
-       position: relative;
-       input[type="text"] {
-            width: 195px;
-            background: transparent;
-            border: 1px solid $black;
-        	height: 20px;
-        	padding: 0 10px;
-            font-size: 14px;
-        	@include input-placeholder($black);
-            font-family: 'Crimson Text', serif;
-       }
-       .icon-search {
-           position: absolute;
-           top: 3px;
-           right: 10px;
-           width: 16px;
-           height: 16px;
-           display: inline-block;
-           background: url(../images/ico-search.png) no-repeat 0 0;
-       }
-    }
+    
+
     .main-nav {
         float: right;
         margin-top: 10px;
