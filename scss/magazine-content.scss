@@ -18,9 +18,28 @@
 }
 
 .full-magazine-content {
-	h2 {
-	    font-size: 20px;
-    	text-transform: uppercase;
+    
+    article {
+    	margin-bottom: 60px;	
+		
+		p {
+		    font-size: 20px;
+	    	line-height: 27px;
+		}
+		header {
+		    margin-bottom: 30px;
+
+			h2 {
+			    font-size: 20px;
+	    	    text-transform: uppercase;
+	    		line-height: 20px;
+			}
+			p {
+				font-style: italic;
+				line-height: 50px;
+	    		font-size: 22px;
+			}
+		}
 	}
 }
 

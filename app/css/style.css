@@ -705,9 +705,21 @@ a {
       font-size: 16px;
       font-style: italic; }
 
-.full-magazine-content h2 {
-  font-size: 20px;
-  text-transform: uppercase; }
+.full-magazine-content article {
+  margin-bottom: 60px; }
+  .full-magazine-content article p {
+    font-size: 20px;
+    line-height: 27px; }
+  .full-magazine-content article header {
+    margin-bottom: 30px; }
+    .full-magazine-content article header h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      line-height: 20px; }
+    .full-magazine-content article header p {
+      font-style: italic;
+      line-height: 50px;
+      font-size: 22px; }
 
 .full-magazine-content a:hover, .sidebar-magazine-content a:hover {
   background-color: rgba(29, 148, 118, 0.2); }
