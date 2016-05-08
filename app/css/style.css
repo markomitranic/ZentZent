@@ -411,8 +411,7 @@ a {
   #header a {
     color: #444;
     background-color: transparent;
-    padding: 0;
-    border-radius: 0; }
+    padding: 0; }
   #header .wrapper {
     height: 135px;
     max-width: 1050px;
@@ -496,10 +495,17 @@ a {
                 align-items: center; }
       #header .wrapper .main-nav li {
         display: inline-block; }
-      #header .wrapper .main-nav a {
-        text-transform: uppercase;
-        font-size: 20px;
-        text-shadow: 0px 0px 1px #9c9c9c; }
+        #header .wrapper .main-nav li.active a {
+          font-weight: 700; }
+        #header .wrapper .main-nav li a {
+          text-transform: uppercase;
+          font-size: 20px;
+          text-shadow: 0px 0px 1px #9c9c9c;
+          padding: 0 4px 2px 4px;
+          -webkit-transition: 0.2s all ease-in-out;
+          transition: 0.2s all ease-in-out; }
+          #header .wrapper .main-nav li a:hover {
+            background-color: rgba(29, 148, 118, 0.4); }
 
 #body {
   margin: 60px auto 0 auto;
