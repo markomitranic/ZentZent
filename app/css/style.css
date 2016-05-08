@@ -460,7 +460,8 @@ a {
         background: transparent;
         border: none;
         font-family: 'Crimson Text', serif;
-        font-size: 12px; }
+        font-size: 12px;
+        z-index: 1; }
       #header .wrapper .searchbox-header .icon-search {
         position: absolute;
         top: 0;
