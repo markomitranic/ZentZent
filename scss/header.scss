@@ -43,32 +43,41 @@
         }
         
         .searchbox-header {
-           float: right;
-           position: relative;
+            width: 18px;
+            height: 18px;
+            overflow: hidden;
+            position: absolute;
+            top: 27px;
+            right: 10px;
+            border: 1px solid transparent;
+            padding: 0;
+            transition: 1.5s all ease-in-out;
 
+            &:hover {
+                width: 198px;
+                border-color: #444;
+                transition: 0.2s all ease-in-out;
+            }
             input[type="text"] {
-                width: 195px;
+                width: 198px;
+                height: 18px;
+                box-sizing: border-box;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0 5px;
                 background: transparent;
-                border: 1px solid $black;
-                height: 20px;
-                padding: 0 10px;
-                font-size: 14px;
-                @include input-placeholder($black);
+                border: none;
                 font-family: 'Crimson Text', serif;
+                font-size: 12px;
            }
            .icon-search {
-               position: absolute;
-               top: 3px;
-               right: 10px;
-               width: 16px;
-               height: 16px;
-               display: inline-block;
-               background: url(../images/ico-search.png) no-repeat 0 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
            }
         }
-
-
-
 
 
 
