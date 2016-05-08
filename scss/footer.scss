@@ -10,14 +10,8 @@
     text-shadow: 0px 0px 1px rgba(156, 156, 156, 1);
 
     // Reset the link color
-    a {
-        color: $dark-gray;
-        background-color: transparent;
-        padding: 0;
-
-        &:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+        text-decoration: underline;
     }
 	.wrapper {
 	    height: 195px;

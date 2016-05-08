@@ -11,14 +11,15 @@ h1 {
 }
 
 a {
-	color: black;
+	color: $dark-gray;
 	text-decoration: none;
-    background-color: rgba(58,220,179,0.2);
-    padding: 0 4px 2px 4px;
-    border-radius: 3px;
+	border-radius: 3px;
     transition: 0.2s all ease-in-out;
 
-	&:hover {
-		background-color: rgba(29, 148, 118, 0.2);
-	}
+    &:hover {
+    	color: $light-gray;
+    }
+    &:visited, &:active {
+		color: $dark-gray;
+    }
 }

@@ -4,19 +4,14 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    a {
-        color: $dark-gray;
-        background-color: transparent;
-        padding: 0;
+    a:hover {
+    	opacity: 0.6;
 
-        &:hover {
-        	opacity: 0.6;
-
-        	img {
-        		box-shadow: -10px 10px 30px #A7A4A4;
-        	}
-        }
+    	img {
+    		box-shadow: -10px 10px 30px #A7A4A4;
+    	}
     }
+
     article {
     	width: 200px;
 	    margin: 0 0 30px 0;
