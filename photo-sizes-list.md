@@ -3,3 +3,4 @@
 
 [730x730] [false] [hero image za pojedinacni clanak]
 [150x150] [true] [related slike za sidebar] [x2]
+[200x270] [TACNO(true)] [slika pojedinacnog casopisa] [x2]
