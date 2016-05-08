@@ -6,9 +6,34 @@
     background-size: cover;
     background-position: bottom left;
 
+        // Reset the link color
+    a {
+        color: $dark-gray;
+        background-color: transparent;
+        padding: 0;
+    }
 	.wrapper {
 	    height: 235px;
 	    max-width: 1050px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
 	    margin: 0 auto;
+        padding-top: 40px;
+
+        nav {
+            width: 200px;
+            text-align: right;
+            
+            ul {
+
+                li {
+
+                    a {
+
+                    }
+                }
+            }
+        }
 	}
 }

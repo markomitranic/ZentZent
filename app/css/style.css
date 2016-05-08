@@ -536,10 +536,30 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom left; }
+  #footer a {
+    color: #444;
+    background-color: transparent;
+    padding: 0; }
   #footer .wrapper {
     height: 235px;
     max-width: 1050px;
-    margin: 0 auto; }
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0 auto;
+    padding-top: 40px; }
+    #footer .wrapper nav {
+      width: 200px;
+      text-align: right; }
 
 .sidebar-related {
   width: 150px;
