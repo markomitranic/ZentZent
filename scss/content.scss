@@ -1,0 +1,199 @@
+.page-content {
+	font-size: 18px;
+    line-height: 30px;
+
+    a {
+	    background-color: rgba(58,220,179,0.2);
+	    padding: 0 4px 2px 4px;
+
+		&:hover {
+			background-color: rgba(29, 148, 118, 0.2);
+		}
+	}
+
+	h2 {
+	    font-size: 120%;
+		text-transform: uppercase;
+		margin: 30px 0; 
+	}
+
+	h3, h4, h5, h6 {
+		font-weight: 400;
+		margin: 30px; 
+	}
+
+	h3:before {
+		content: " » ";
+	}
+
+	h4:before {
+		content: " »  » ";
+	}
+
+	h5:before {
+		content: " »  »  » ";
+	}
+
+	h6:before {
+		content: " »  »  »  » ";
+	}
+
+	p {
+
+	}
+
+	code {
+		background-color: #EFEFEF;
+    	border-radius: 3px;
+    	padding: 2px;
+    	font-size: 12px;
+	}
+	
+	// Image with caption
+	.wp-caption {
+		margin: 15px 5px;
+
+		a:after {
+			display: none;
+		}
+		.wp-caption-text {
+			margin: 0;
+		    line-height: 14px;
+		    font-size: 14px;
+		    text-align: center;
+		}
+	}
+
+	// Special IMAGE styling for layouts and floats
+	.alignleft {
+	    float: left;
+	    margin:0 15px 30px 0;
+	}
+	.aligncenter {
+	    display: block;
+	    margin: 0 auto 30px auto;
+	}
+	.alignright {
+	    float: right;
+	    margin:0 0 30px 15px;
+	}
+	.alignnone {
+	    float: none;
+	    display:block;
+	    margin:0 0 30px 0;
+	}
+	.size-full {
+	    width:100%;
+	    height:auto;
+	    margin:0 0 30px 0;
+	}
+	p .alignleft {
+	    float: left;
+	    margin:5px 15px 30px 0;
+	}
+	p .aligncenter {
+	    display: block;
+	    margin: 5px auto 30px auto;
+	}
+	p .alignright {
+	    float: right;
+	    margin:5px 0 30px 15px;
+	}
+	p .alignnone {
+	    float: none;
+	    display:block;
+	    margin:5px 0 30px 0;
+	}
+	p .size-full {
+	    width:100%;
+	    height:auto;
+	    margin:5px 0 30px 0;
+	}
+
+	// Table styles
+	table {
+        margin: 0 30px 30px 30px;
+	    font-size: 12px;
+
+		th, tfoot td {
+		    padding: 10px 15px;
+		    background: #bbb!important;
+		    border: 1px solid #999;
+		    font-weight: normal;
+		    text-transform: uppercase;
+		    text-align: left;
+	    	white-space: nowrap;
+	    	font-weight: 700;
+		}
+
+		td {
+		    border: 1px solid #999;
+		    padding: 10px 15px;
+		    background: #ddd;
+		}
+
+		tr:nth-child(odd) td {
+		    background: #eee;
+		}
+
+		td, td img {
+		    vertical-align: top;
+		}
+	}
+
+	// Lists
+	ol {
+	    margin-bottom: 30px;
+	    counter-reset: preview-ol;
+
+	    li {
+		    list-style: none;
+		    padding: 3px 0;
+		}
+
+		li:before {
+		    content: counter(preview-ol);
+		    counter-increment: preview-ol;
+		    color: $light-gray;
+		    border: 1px solid #666;
+		    border-radius: 50%;
+		    width: 26px;
+		    height: 26px;
+		    display: inline-block;
+		    text-align: center;
+		    margin-right: 20px;
+		    line-height: 26px;
+		}
+	}
+	ul {
+    	margin-bottom: 30px;
+
+    	li {
+		    list-style: none;
+		    padding: 3px 0;
+		}
+		li:before {
+		    content: '~ ';
+		    font-size: 20px;
+		    color: $light-gray; // was #999
+		    margin-right: 3px;
+		}
+	}
+	blockquote {
+	    font-style: italic;
+	    line-height: 28px;
+	    font-size: 18px;
+	    margin: 30px;
+
+	    &:before {
+	    	content: "“";
+	    	display: inline-block;
+    		font-size: 30px;
+	    }
+	    &:after {
+	    	content: "”";
+	    	display: inline-block;
+    		font-size: 30px;
+	    }
+	}
+}

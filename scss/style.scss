@@ -1,4 +1,26 @@
 @import "reset";
+@import "variables";
 
-// Main page styles
+// Global Page Styles (fonts, links etc)
+@import "global";
+// Specific styles for the page CONTENT div.
+@import "content";
+// Import icons CSS
+@import "icons";
+
+
+// Header Style
 @import "header";
+// General Body styles
+@import "body";
+// Footer Style
+@import "footer";
+
+//Specific sidebar styles
+@import "sidebar";
+// Category page with big items
+@import "category-big";
+// Category page with small items
+@import "category-small";
+// Category page of Magazine contents
+@import "magazine-content";

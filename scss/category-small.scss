@@ -1,0 +1,42 @@
+.category-small {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    article {
+    	width: 230px;
+	    margin: 0 0 40px 0;
+
+        a:hover img {
+            box-shadow: 0px 0px 30px #A7A4A4;
+            transition: 0.3s all ease-in-out;
+            filter: grayscale(0%);
+        }
+        header {
+            float: right;
+            display: block;
+            text-align: left;
+            width: 140px;
+
+            h2, p {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            p {
+                font-style: italic;
+            }   
+        }
+
+	    img {
+            float: left;
+            display: block;
+            width: 75px;
+            height: 100px;
+            margin: 0 15px 5px 0;
+            transition: 1.0s all ease-in-out;
+            box-shadow: 0px 0px 30px transparent;
+            filter: grayscale(100%);
+	    }
+    }
+}

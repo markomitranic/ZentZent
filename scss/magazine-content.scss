@@ -1,0 +1,51 @@
+.sidebar-magazine-content {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: right;
+
+    article {
+		margin: 0 0 35px 0;
+
+    	header {
+    		margin: 0 0 15px 0;
+    		word-break: break-all;
+    	}
+    	p {
+    		font-size: 16px;
+    		font-style: italic;
+    	}
+    }
+}
+
+.full-magazine-content {
+    
+    article {
+    	margin-bottom: 60px;	
+		
+		p {
+		    font-size: 20px;
+	    	line-height: 27px;
+		}
+		header {
+		    margin-bottom: 30px;
+
+			h2 {
+			    font-size: 20px;
+	    	    text-transform: uppercase;
+	    		line-height: 20px;
+			}
+			p {
+				font-style: italic;
+				line-height: 50px;
+	    		font-size: 22px;
+			}
+		}
+	}
+}
+
+.full-magazine-content, .sidebar-magazine-content {
+    // Reset the link color
+    a:hover {
+    	background-color: rgba(29, 148, 118, 0.2);
+    }
+}
