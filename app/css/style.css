@@ -648,12 +648,19 @@ a {
       margin-top: 20px; } }
   #body #sidebar {
     width: 210px; }
+    @media (max-width: 950px) {
+      #body #sidebar {
+        margin-left: 40px; } }
     @media (max-width: 767px) {
       #body #sidebar {
         width: 100%; } }
   #body #main {
     width: calc(100% - 320px);
     margin-left: 110px; }
+    @media (max-width: 950px) {
+      #body #main {
+        margin: 0 40px 0 0;
+        width: calc(100% - 290px); } }
     @media (max-width: 767px) {
       #body #main {
         width: 100%;
@@ -792,7 +799,10 @@ a {
       -webkit-box-align: center;
       -webkit-align-items: center;
           -ms-flex-align: center;
-              align-items: center; } }
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; } }
   .sidebar-related article {
     margin-bottom: 40px;
     text-align: center;

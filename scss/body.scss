@@ -13,6 +13,9 @@
 	#sidebar {
 		width: 210px;
 
+		@media (max-width: $medium) {
+			margin-left: 40px;
+		}
 	    @media (max-width: $small) {
 	        width: 100%;
 	    }
@@ -21,12 +24,17 @@
 	   	width: calc(100% - 320px);
    		margin-left: 110px;
 
+		@media (max-width: $medium) {
+			margin: 0 40px 0 0;
+		    width: calc(100% - 290px);
+		}
 	    @media (max-width: $small) {
 	        width: 100%;
 	        margin: 0 50px;
 	    }
 	    @media (max-width: $mobile) {
 	        margin: 0 10px;
+
 	    }
 
    		.post-hero {
