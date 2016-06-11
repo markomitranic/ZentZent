@@ -29,6 +29,8 @@
             position: absolute;
             top: 27px;
             left: 10px;
+            line-height: 22px;
+            
             @media (max-width: $large) {
                 left: 40px;
             }
@@ -146,7 +148,7 @@
             li {
                 display: inline-block;
 
-                &.active a {
+                &.current-menu-item a {
                     font-weight: 700;
                 }
                 a {
@@ -190,8 +192,8 @@
                 margin-top: 20px;
 
                 li {
-                    font-size: 190%;
-                    line-height: 190%;
+                    font-size: 100%;
+                    line-height: 120%;
 
                     &.active a {
                         background-color: $dark-gray;

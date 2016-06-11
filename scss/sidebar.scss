@@ -7,34 +7,63 @@
         margin: 0;
         display: flex;
         justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
+        align-items: initial;
+        flex-wrap: nowrap;
     }
+    @media (max-width: $mobile) {
+		flex-wrap: wrap;
+	    justify-content: flex-start;
+    	padding: 0 60px;
+    	box-sizing: border-box;
+	}
 
 	article {
-		margin-bottom: 40px;
-		text-align: center;
-		min-width: 100px;
+		margin-bottom: 30px;
+		text-align: left;
+		min-width: 150px;
+	    font-size: 20px;
+
+	    @media (max-width: $small) {
+    	    max-width: 25%;
+		    box-sizing: border-box;
+		    padding: 10px;
+	    }
+	    @media (max-width: $mobile) {
+			max-width: 100%;
+		    width: 100%;
+		}
 
 		a {
 		    &:hover {
 		    	opacity: 0.6;
 		    }
+		    header {
+	    	    margin-top: 5px;
+    	        line-height: 32px;
+		    }
+		    p {
+		    	font-style: italic;
+		    }
 			img {
-				max-width: 150px;
-				max-height: 150px;
+				display: block;
+				max-width: 74px;
+				max-height: 74px;
+				width: 74px;
+				height: 74px;
 
 			    @media (max-width: $small) {
 			        width: 64px;
 			        height: 64px;
 			    }
-			}
-			h2 {
-			    text-transform: uppercase;
-			    margin-left: 5px;
-			}
-			p {
-				margin-left: 5px;
+			    @media (max-width: $mobile) {
+				    margin-right: 10px;
+				    width: 100%;
+				    float: left;
+				    max-width: 74px;
+					max-height: 74px;
+					width: 74px;
+					height: 74px;
+				}
 			}
 		}
 	}
