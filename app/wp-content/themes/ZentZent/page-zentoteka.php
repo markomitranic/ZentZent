@@ -36,7 +36,7 @@ the_post();
 
 				<article>
 					<a href="<?php the_permalink(); ?>">
-						<?php if (get_field('hero_slika') && get_field('prikazivanje_hero_slike')) : 
+						<?php if (get_field('hero_slika')) : 
 							$slika = get_field('hero_slika');
 						?>
 							<img src="<?php echo $slika['url']; ?>" srcset="<?php the_srcset($slika, 'sidebar_thumb2x'); the_srcset($slika, 'sidebar_thumb'); ?>" alt="<?php echo $slika['alt']; ?>">

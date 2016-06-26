@@ -69,4 +69,13 @@ function the_srcset($slika, $slug) {
     echo $slika[$slug] . ' ' . $slika[$slugW] . 'w, ';
 }
 
+add_action('init', 'myStartSession', 1);
+function myStartSession() {
+    if(!session_id()) {
+        session_start();
+    }
+}
+
+
+
 ?>

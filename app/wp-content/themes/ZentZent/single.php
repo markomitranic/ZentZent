@@ -20,7 +20,8 @@ the_post();
 
 <div id="body">
 	<section id="sidebar">
-		<?php include ('sidebar.php'); ?>
+		<!-- Iskra decided they wont need a sidebar here -->
+		<?php //include ('sidebar.php'); ?>
 	</section>
 	<main role="main" id="main">
 		<header class="post-hero">
