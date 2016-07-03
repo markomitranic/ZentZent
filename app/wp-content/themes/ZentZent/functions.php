@@ -89,7 +89,7 @@ function the_srcset($slika, $slug) {
 
 // Shortcode for fusnotes
 function fusnotaHandler( $atts, $content = null ) {
-    return '<span class="footnote jailed"><span class="footnote-number">[*]</span><span class="footnote-body">'.$content.'</span></span>';
+    return '<span class="footnote jailed"><span class="footnote-number">*</span><span class="footnote-body">'.$content.'</span></span>';
 }
 
 add_shortcode( 'fusnota', 'fusnotaHandler' );

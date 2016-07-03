@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&subset=latin-ext';
+@import 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext';
 main {
   display: block; }
 
@@ -125,7 +125,7 @@ pre {
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
-  word-wrap: break-word; }
+  word-wrap: normal; }
 
 input[type="radio"] {
   vertical-align: text-bottom; }
@@ -390,12 +390,8 @@ a {
     display: inline; }
     .page-content .footnote span.footnote-number {
       color: blue;
-      padding: 0 3px;
-      margin: 0 1px 0 5px;
       font-size: 12px;
       cursor: pointer;
-      background-color: #b8deb8;
-      border-radius: 5px;
       vertical-align: top; }
     .page-content .footnote .footnote-body {
       color: #444;
@@ -724,7 +720,7 @@ a {
       #body #main {
         padding: 0 20px 50px 20px; } }
     #body #main .post-hero {
-      margin-bottom: 80px; }
+      margin-bottom: 40px; }
       #body #main .post-hero img {
         max-width: 100%;
         max-height: 390px; }
@@ -1021,7 +1017,7 @@ a {
     margin: 0 0 35px 0; }
     .sidebar-magazine-content article header {
       margin: 0 0 15px 0;
-      word-break: break-all; }
+      word-break: normal; }
     .sidebar-magazine-content article p {
       font-size: 16px;
       font-style: italic; }

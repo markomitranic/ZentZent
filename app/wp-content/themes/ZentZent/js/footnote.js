@@ -6,7 +6,7 @@ jQuery('document').ready(function() {
 	if ($allFootnotes.length !== 0) {
 		jQuery.each($allFootnotes, function(key, value) {
 			i++;
-			$(this).find('.footnote-number').text('[' + i + ']')
+			$(this).find('.footnote-number').text(i);
 		});
 	}
 });

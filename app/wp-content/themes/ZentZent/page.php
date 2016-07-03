@@ -20,7 +20,9 @@ the_post();
 			?>
 				<img src="<?php echo $slika['url']; ?>" srcset="<?php the_srcset($slika, 'Big_hero'); ?>" alt="<?php echo $slika['alt']; ?>">
 			<?php endif; ?>
-			<h1><?php the_title(); ?></h1>
+			<h1><?php if (get_field('title')) {
+					the_title();
+				} ?></h1>
 			<p><?php echo get_field('autor_teksta'); ?></p>
 		</header>
 		<article class="page-content">
