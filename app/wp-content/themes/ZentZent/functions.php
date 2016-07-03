@@ -36,11 +36,13 @@ function custom_scripts() {
     // Register the scripts first so that WP knows what we are working with:
     // Parameters: Slug, url, dependencies, version, in_footer
     wp_register_script( 'footnote', get_template_directory_uri() . '/js/footnote.js', ['jquery'], '1.0', true );
+    wp_register_script( 'delegate', get_template_directory_uri() . '/js/delegate.js', ['jquery'], '1.0', true );
     wp_register_script( 'mobile_menu', get_template_directory_uri() . '/js/mobile-menu.js', ['jquery'], '1.0', true );
     wp_register_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv-printshiv.min.js', ['jquery'], '3.7.3', true );
  
     // Then we need to enqueue them one by one to the theme:
     wp_enqueue_script( 'footnote' );
+    wp_enqueue_script( 'delegate' );
     wp_enqueue_script( 'mobile_menu' );
     wp_enqueue_script( 'html5shiv' );
 }
@@ -53,7 +55,8 @@ function register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'footer-menu' => __( 'Footer Menu' )
+      'footer-menu' => __( 'Footer Menu' ),
+      'lang-menu' => __( 'Language Menu' )
     )
   );
 }

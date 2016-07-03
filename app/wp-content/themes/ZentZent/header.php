@@ -12,6 +12,7 @@
 
 <header id="header">
 	<div class="wrapper">
+		<?php wp_nav_menu( array( 'theme_location' => 'lang-menu' ) ); ?>
         <ul class="lang-nav">
             <li class="active"><a href="#" class="active">sr</a></li>
             <li><a href="#">eng</a></li>
