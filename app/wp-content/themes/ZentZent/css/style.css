@@ -254,10 +254,10 @@ a {
     height: auto;
     margin-bottom: 40px; }
   .page-content a {
-    background-color: rgba(58, 220, 179, 0.2);
-    padding: 0 4px 2px 4px; }
+    border-bottom: 0px solid blue;
+    color: blue; }
     .page-content a:hover {
-      background-color: rgba(29, 148, 118, 0.2); }
+      border-bottom: 2px solid blue; }
   .page-content h1 {
     text-transform: none; }
   .page-content h2 {
@@ -886,10 +886,16 @@ a {
     .sidebar-related article a:hover {
       opacity: 0.6; }
     .sidebar-related article a header {
-      line-height: 18px;
+      font-size: 16px;
+      line-height: 24px;
       margin-top: 20px; }
     .sidebar-related article a p {
-      font-style: italic; }
+      font-style: italic;
+      font-size: 18px;
+      line-height: 24px; }
+    .sidebar-related article a h2 {
+      font-size: 16px;
+      line-height: 24px; }
     .sidebar-related article a img {
       display: block;
       max-width: 94px;

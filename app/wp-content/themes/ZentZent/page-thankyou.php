@@ -35,7 +35,7 @@ the_post();
 <?php 
 function textHtmlFilter() { return 'text/html'; }
 add_filter('wp_mail_content_type', 'textHtmlFilter');
-$to = 'marko.mitranic@gmail.com'; //zentmagazine@gmail.com
+$to = 'zentmagazine@gmail.com'; //zentmagazine@gmail.com
 $subject = "Zent Payment from: ".$orderData["email"];;
 $message = '<table><thead><tr><td style="border: 1px solid black; padding: 0px 5px; font-weight: 700; text-transform: capitalize; background-color: #cadece; color: black;">Field Name</td><td style="border: 1px solid black; padding: 0px 5px; font-weight: 700; text-transform: capitalize; background-color: #cadece; color: black;">Value</td></tr></thead><tbody>';
 

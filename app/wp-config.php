@@ -21,12 +21,15 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'zentdb4672');
+// define('DB_NAME', 'zent');
 
 /** MySQL database username */
 define('DB_USER', 'root');
+// define('DB_USER', 'zent');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'root');
+// define('DB_PASSWORD', 'o53e9xiedxod52I');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
