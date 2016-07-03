@@ -608,12 +608,6 @@
 	</div>
 
 
-
-
-
-
-
-
 	<div class="hidden paket">
 		<input type="radio" name="paket" value="stampano" checked>
 		<input type="radio" name="paket" value="digitalno">
@@ -623,9 +617,9 @@
 
 	<!-- Moving the rest of the fields to new page -->
 	<?php 
-		foreach ($post as $key => $value) {
+		foreach ($request as $key => $value) {
 			if ($key == "stage") {
-				echo '<input type="hidden" name="stage" value="2" required>';
+				echo '<input type="hidden" name="stage" id="stage" value="2" required>';
 			} else {
 				echo '<input type="hidden" name="' . $key . '" value="' . $value . '" required>';
 			}
@@ -649,7 +643,7 @@
 
 	// Ako je druga adresa, dodati required i slidedown slideup
 	$document.on('change', '#drugaadresa', function() {
-		$('#email-form').prepend(drugaadresa);
+		$('#email-form').before(drugaadresa);
 		var $drugaadresaForm = $('#drugaadresa-form');
 		$drugaadresaForm.slideToggle();
 

@@ -1,4 +1,4 @@
-<p>Zent želi da bude nezavisan i finansijski samoodrživ. Zent je utemeljen u vrednostima zajedništva, ne samo u smislu tretiranja znanja kao javnog dobra, već i u smislu izumevanja modela izdavaštva kome cilj nije profit već pristupačno znanje koje ide ruku pod ruku sa raspodelom prihoda među onima koji u njegovoj proizvodnji učestvuju.</p>
+<?php the_content(); ?>
 
 <p class="breadcrumbs">
 	<span class="active-breadcrumb">Poruči</span>
@@ -14,8 +14,6 @@
 		<ul>
 			<li>&raquo; RSD <span>900</span></li>
 			<li>&raquo; EUR <span>10</span></li>
-			<li>&raquo; KM <span>15</span></li>
-			<li>&raquo; KN <span>60</span></li>
 		</ul>
 	</div>
 	<div data-name="digitalno">
@@ -23,8 +21,6 @@
 		<ul>
 			<li>&raquo; RSD <span>300</span></li>
 			<li>&raquo; EUR <span>5</span></li>
-			<li>&raquo; KM <span>7</span></li>
-			<li>&raquo; KN <span>30</span></li>
 		</ul>
 	</div>
 	<div data-name="oba">
@@ -32,8 +28,6 @@
 		<ul>
 			<li>&raquo; RSD <span>1000</span></li>
 			<li>&raquo; EUR <span>12</span></li>
-			<li>&raquo; KM <span>18</span></li>
-			<li>&raquo; KN <span>70</span></li>
 		</ul>
 	</div>
 	<div data-name="specijal">
@@ -41,8 +35,6 @@
 		<ul>
 			<li>&raquo; RSD <span>1800</span></li>
 			<li>&raquo; EUR <span>20</span></li>
-			<li>&raquo; KM <span>36</span></li>
-			<li>&raquo; KN <span>140</span></li>
 		</ul>
 	</div>
 </div>
@@ -52,14 +44,22 @@
 	<div id="odaberibroj">
 		<h2>Izaberi broj</h2>
 		<div>
+
+
+		<?php $availableIssues = get_field('na_prodaju');
+
+			if( $availableIssues ): 
+			foreach( $availableIssues as $post):  setup_postdata($post);
+			$name = (get_field('ime_izdanja')) ? get_field('ime_izdanja') : '#';
+			$slug = $post->post_name;
+
+		?>
 			<p>
-				<label for="zent01">&raquo; ZENT #01 - Prezent</label>
-				<span>broj komada <input type="number" name="zent01" id="zent01" value="0" min="0" max="10" required></span>
+				<label for="<?php echo $slug; ?>">&raquo; <?php the_title().' - '.$name ?> - Prezent</label>
+				<span>broj komada <input type="number" name="<?php echo $slug; ?>" id="<?php echo $slug; ?>" value="0" min="0" max="10" required></span>
 			</p>
-			<p>
-				<label for="zent02">&raquo; ZENT #02 - Rad</label>
-				<span>broj komada <input type="number" name="zent02" id="zent02" value="0" min="0" max="10" required></span>
-			</p>
+		<?php endforeach; wp_reset_postdata(); endif; ?>
+
 			<p class="specijal-paket" style="display:none;">
 				<label for="specijal-paket">&raquo; Broj specijal paketa</label>
 				<span>broj komada <input type="number" name="specijal-paket" id="specijal-paket" value="0" min="0" max="10" required></span>
@@ -75,7 +75,7 @@
 		<input type="radio" name="paket" value="oba">
 		<input type="radio" name="paket" value="specijal">
 	</div>
-	<input type="hidden" name="stage" value="1" required>
+	<input type="hidden" name="stage" id="stage" value="1" required>
 
 	<p class="checkoutErrorMessage">Undefined Error!</p>
 	<input type="submit" value="Sledeći Korak">

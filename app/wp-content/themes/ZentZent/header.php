@@ -46,8 +46,8 @@
 		            <li><a href="#">eng</a></li>
 		        </ul>
 		        <hr>
-		        <p>Pretraga:</p>
-		        <input type="text"/>
+<!-- 		        <p>Pretraga:</p>
+		        <input type="text"/> -->
 	        </div>
         </div>
 

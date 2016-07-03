@@ -7,12 +7,11 @@ get_header();
 
 the_post(); 
 
-
-if ($_POST["stage"]) {
-	$post = $_POST;
+if (isset($_POST["stage"])) {
+	$request = $_POST;
 } else {
-	$post = array();
-	$post["stage"] = "0";
+	$request = array();
+	$request["stage"] = "0";
 }
 
 ?>
@@ -23,8 +22,9 @@ if ($_POST["stage"]) {
 	<section id="sidebar"></section>
 	<main role="main" id="main">
 		<section class="full-magazine-content">
+
 		<?php 
-			switch ($post["stage"]) {
+			switch ($request["stage"]) {
 				case '0':
 					$url = 'form-slices/paketi.php';
 					break;
@@ -43,5 +43,12 @@ if ($_POST["stage"]) {
 		</section>
 	</main>
 </div>
+
+
+
+
+
+
+
 
 <?php get_footer(); ?>

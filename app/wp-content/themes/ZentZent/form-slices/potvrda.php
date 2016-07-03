@@ -11,34 +11,48 @@
 
 	// Create a reference number based on timestamp
 	$uniqid = uniqid();
-	
-	switch ($post["paket"]) {
-		case 'stampano':
-			$price = 10;
+
+
+	switch ($request["drzava"]) {
+		case 'SRB':
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 238;
+			$price = priceInRSD($request["paket"]);
+			$paypal = false;
 			break;
-		case 'digitalno':
-			$price = 5;
+		case 'HRV' :
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$price = priceInEur($request["paket"]);
+			$paypal = true;
 			break;
-		case 'oba':
-			$price = 12;
+		case 'SVN' :
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$price = priceInEur($request["paket"]);
+			$paypal = true;
 			break;
-		case 'specijal':
-			$price = 20;
+		case 'BIH':
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$price = priceInEur($request["paket"]);
+			$paypal = true;
 			break;
-		
+		case 'MNE':
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$price = priceInEur($request["paket"]);
+			$paypal = true;
+			break;
+		case 'MKD' :
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$price = priceInEur($request["paket"]);
+			$paypal = true;
+			break;			
 		default:
-			die('There was an error, please inform the administrator.');
-			// Stop the presses, someone is meddling!
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 10;
+			$price = priceInEur($request["paket"]);
+			$paypal = true;
 			break;
 	}
 
-	// Check out what payment method to show.
-	if ($post["drzava"] == "SRB") {
-		$paypal = false;
-	} else {
-		$paypal = true;
-	}
 
+	$fullPrice = 0;
  ?>
 
 <form action="<?php echo get_bloginfo('url'); ?>/poruci/thank-you/" method="POST" id="bigForm">	
@@ -56,34 +70,47 @@
 			</thead>
 			<tbody>
 			<!-- If it is special, shoq one thing. Else, we have a bunch of loops happen. -->
-			<?php if ($post["paket"] == "specijal") : ?>
+			<?php if ($request["paket"] == "specijal") : ?>
 				<tr>
 					<td>Specijal Paket - Oba broja</td>
-					<td><span><?php echo $post["specijal-paket"]; ?></span></td>
-					<td><span>382.00</span></td>
-					<td><span><?php echo $price * $post["specijal-paket"]; ?></span></td>
+					<td><span><?php echo $request["specijal-paket"]; ?></span></td>
+					<td><span><?php echo $postarina; ?></span></td>
+					<td><span><?php echo ($price * $request["specijal-paket"]) + $postarina; ?></span></td>
 				</tr>
-			<?php $fullPrice += $price * $post["specijal-paket"]; ?>
-			<?php else : ?>
-				<?php if ($post["zent01"] !== "0") : ?>
+			<?php $fullPrice += ($price * $request["specijal-paket"]) + $postarina; ?>
+			<?php else : 
+				$issuesObject = array();
+
+				// Take all available issues and create an assoc aray.
+				$availableIssues = get_field('na_prodaju');
+				if( $availableIssues ): 
+				foreach( $availableIssues as $post):  setup_postdata($post);
+					$issue = $post->post_title;
+					$name = (get_field('ime_izdanja', $post->ID)) ? get_field('ime_izdanja', $post->ID) : '#';
+					$slug = $post->post_name;
+					$issuesObject[] = [
+						'issue'=>$issue,
+						'name'=>$name,
+						'slug'=>$slug
+					];
+				endforeach; wp_reset_postdata(); endif;
+
+				foreach ($issuesObject as $key => $value) : ?>
 					<tr>
-						<td>Zent #01 - Prezent</td>
-						<td><span><?php echo $post["zent01"]; ?></span></td>
-						<td><span>382.00</span></td>
-						<td><span><?php echo $price * $post["zent01"]; ?></span></td>
+						<td><?php echo $value['issue'].' - '.$value['name'] ?></td>
+						<td><span><?php echo $request[$value["slug"]]; ?></span></td>
+						<td></td>
+						<td><span><?php echo ($price * $request[$value["slug"]]); ?></span></td>
 					</tr>
-				<?php $fullPrice += $price * $post["zent01"]; ?>
-				<?php endif; ?>
-				<?php if ($post["zent02"] !== "0") : ?>
+					<?php $fullPrice += $price * $request[$value["slug"]]; ?>
+				<?php endforeach; ?>
 					<tr>
-						<td>Zent #02 - Rad</td>
-						<td><span><?php echo $post["zent02"]; ?></span></td>
-						<td><span>382.00</span></td>
-						<td><span><?php echo $price * $post["zent02"]; ?></span></td>
+						<td>Ukupno:</td>
+						<td></td>
+						<td><span><?php echo $postarina; ?></span></td>
+						<td><span><?php echo ($fullPrice + $postarina); ?></span></td>
 					</tr>
-				<?php $fullPrice += $price * $post["zent02"]; ?>
 				<?php endif; ?>
-			<?php endif; ?>
 			</tbody>
 		</table>
 	</div>
@@ -111,9 +138,9 @@
 	<!-- Moving the rest of the fields to new page -->
 	<input type="hidden" name="ref" value="<?php echo $uniqid; ?>">
 	<?php 
-		foreach ($post as $key => $value) {
+		foreach ($request as $key => $value) {
 			if ($key == "stage") {
-				echo '<input type="hidden" name="stage" value="3" required>';
+				echo '<input type="hidden" name="stage" id="stage" value="3" required>';
 			} else {
 				echo '<input type="hidden" name="' . $key . '" value="' . $value . '" required>';
 			}
@@ -135,14 +162,62 @@
 <?php 
 
 	// We need to create a session right now and save all the data from the form as serialized string.
-	$post['ref'] = $uniqid;
-	$post['stage'] = 3;
-	$post['paymentMethod'] = ($paypal) ? 'paypal' : 'pouzece';
-	$post['fullPrice'] = $fullPrice;
+	$request['ref'] = $uniqid;
+	$request['stage'] = 3;
+	$request['paymentMethod'] = ($paypal) ? 'paypal' : 'pouzece';
+	$request['fullPrice'] = $fullPrice;
 
-	$_SESSION['zentOrderData'] = $post;
+	$_SESSION['zentOrderData'] = $request;
 
- ?>
+
+
+	function priceInRSD($paket) {
+		switch ($paket) {
+			case 'stampano':
+				$price = 900;
+				break;
+			case 'digitalno':
+				$price = 300;
+				break;
+			case 'oba':
+				$price = 1000;
+				break;
+			case 'specijal':
+				$price = 1800;
+				break;
+			default:
+				die('There was an error, please inform the administrator.');
+				// Stop the presses, someone is meddling!
+				break;
+		}
+		return $price;
+	}
+
+	function priceInEur($paket) {
+		switch ($paket) {
+			case 'stampano':
+				$price = 10;
+				break;
+			case 'digitalno':
+				$price = 5;
+				break;
+			case 'oba':
+				$price = 12;
+				break;
+			case 'specijal':
+				$price = 20;
+				break;
+			default:
+				die('There was an error, please inform the administrator.');
+				// Stop the presses, someone is meddling!
+				break;
+		}
+		return $price;
+	}
+
+?>
+
+
 
 <script>
 	// Autofill values in paypal form
@@ -150,8 +225,16 @@
 	// create price and ref
 	var price = <?php echo $fullPrice; ?>;
 	var ref = "<?php echo $uniqid; ?>";
-	var transactionName = "Zent Payment from: <?php echo $post["email"]; ?>";
+	var transactionName = "Zent Payment from: <?php echo $request["email"]; ?>";
 	$paypalForm.find('input[name="other_amount"]').val(price);
 	$paypalForm.find('.wp_pp_button_reference').val(ref);
 	$paypalForm.find('input[name="item_name"]').val(transactionName);
+	// Hide some fields
+	$paypalForm.find('#amount').hide();
+	$paypalForm.find('.wpapp_payment_subject').hide();
+	$paypalForm.find('.wpapp_other_amount_label').hide();
+	$paypalForm.find('.wpapp_other_amount_input').hide();
+	$paypalForm.find('.wpapp_ref_title_label').hide();
+	$paypalForm.find('.wpapp_ref_value').hide();
+	$paypalForm.find('.wpapp_payment_button').css('text-align', 'center');
 </script>

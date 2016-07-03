@@ -11,3 +11,16 @@
 .buy_now_button_image {
     max-width: 100%;
 }
+
+.wpapp_payment_subject{
+    margin: 10px 0px;
+}
+.wpapp_other_amount_label{
+    margin: 10px 0px;
+}
+.wpapp_ref_title_label{
+    margin: 10px 0px;
+}
+.wpapp_payment_button{
+    margin: 10px 0px;
+}

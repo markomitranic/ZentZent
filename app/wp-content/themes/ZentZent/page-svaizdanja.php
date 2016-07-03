@@ -37,7 +37,8 @@ the_post();
 				if ( $the_query->have_posts() ) :
 					while ( $the_query->have_posts() ) :
 						$the_query->the_post();
-						$slika = get_field('hero_slika');	
+						$slika = get_field('hero_slika');
+						$imeizdanja = get_field('ime_izdanja');
 			?>
 
 				<article>
@@ -45,6 +46,7 @@ the_post();
 							<img src="<?php echo $slika['url']; ?>" srcset="<?php the_srcset($slika, 'casopis'); the_srcset($slika, 'casopis2x'); ?>" alt="<?php echo $slika['alt']; ?>">
 						<header>
 							<p><?php the_title(); ?></p>
+							<p><?php echo $imeizdanja; ?></p>
 						</header>
 					</a>
 				</article>

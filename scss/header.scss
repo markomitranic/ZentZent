@@ -5,7 +5,6 @@
     background-size: cover;
     background-position: bottom left;
     text-shadow: 0px 0px 1px rgba(156, 156, 156, 1);
-
     // Reset the link color
     a {
         color: $dark-gray;
@@ -87,7 +86,8 @@
                 padding: 0 5px;
                 background: transparent;
                 border: none;
-                font-family: 'Crimson Text', serif;
+                font-family: 'PT Serif', serif;
+                // font-family: 'Crimson Text', serif;
                 font-size: 12px;
                 z-index: 1;
            }

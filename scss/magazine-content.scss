@@ -2,7 +2,9 @@
     font-size: 18px;
     line-height: 24px;
     text-align: right;
-
+    @media (max-width: $small) {
+        text-align: center;
+    }
     article {
 		margin: 0 0 35px 0;
 
@@ -40,6 +42,24 @@
 	    		font-size: 22px;
 			}
 		}
+	}
+	#donate-left {
+		width: 50%;
+		padding: 0 20px 0 0;
+		box-sizing: border-box;
+		float: left;
+	    @media (max-width: $small) {
+	        width: 100%;
+	    }
+	}
+	#donate-right {
+		width: 50%;
+		padding: 0 0 0 20px;
+		box-sizing: border-box;
+		float: right;
+	    @media (max-width: $small) {
+	        width: 100%;
+	    }
 	}
 }
 

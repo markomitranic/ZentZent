@@ -1,6 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700);
+// @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700);
+@import 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&subset=latin-ext';
+
 body {
-	font-family: 'Crimson Text',Georgia, serif;
+    font-family: 'PT Serif', serif;
+	// font-family: 'Crimson Text',Georgia, serif;
 	color: $dark-gray;
     background-color: $bgcolor;
 }

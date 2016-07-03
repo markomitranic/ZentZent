@@ -45,7 +45,7 @@ function wppp_render_paypal_button_with_other_amt($args) {
     $output .= '<div class="wp_paypal_button_widget_any_amt">';
     $output .= '<form name="_xclick" class="wp_accept_pp_button_form_any_amount" action="https://www.paypal.com/cgi-bin/webscr" method="post" ' . $window_target . '>';
 
-    $output .= '<div class="wp_pp_button_amount_section">'.esc_attr($other_amount_label).' <input type="number" min="1" step="any" name="amount" value="' . esc_attr($default_amount) . '" style="max-width:60px;"> ' . esc_attr($currency) . '</div>';
+    $output .= '<div class="wp_pp_button_amount_section">'.esc_attr($other_amount_label).' <input type="number" min="1" step="any" name="amount" value="' . esc_attr($default_amount) . '" class="wpapp_other_amt_input" style="max-width:80px;"> ' . esc_attr($currency) . '</div>';
 
     if (!empty($reference)) {
         $output .= '<div class="wp_pp_button_reference_section">';
@@ -149,7 +149,7 @@ function wppp_render_paypal_button_form($args) {
                     <?php
                     if (!empty($other_amount)) {
                         echo '<div class="wp_pp_button_other_amt_section">';
-                        echo esc_attr($other_amount_label).' <input type="number" min="1" step="any" name="other_amount" value="" style="max-width:60px;"> ' . esc_attr($currency);
+                        echo esc_attr($other_amount_label).' <input type="number" min="1" step="any" name="other_amount" value="" class="wpapp_other_amt_input" style="max-width:80px;"> ' . esc_attr($currency);
                         echo '</div>';
                     }
 

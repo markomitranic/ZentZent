@@ -1,13 +1,13 @@
 <?php
 /*
-  Plugin Name: WP Easy Paypal Payment Accept
-  Version: v4.9
-  Plugin URI: https://www.tipsandtricks-hq.com/wordpress-easy-paypal-payment-or-donation-accept-plugin-120
-  Author: Tips and Tricks HQ
-  Author URI: https://www.tipsandtricks-hq.com/
-  Description: Easy to use Wordpress plugin to accept paypal payment for a service or product or donation in one click. Can be used in the sidebar, posts and pages.
-  License: GPL2
- */
+Plugin Name: WP Easy Paypal Payment Accept
+Version: v4.9.2
+Plugin URI: https://www.tipsandtricks-hq.com/wordpress-easy-paypal-payment-or-donation-accept-plugin-120
+Author: Tips and Tricks HQ
+Author URI: https://www.tipsandtricks-hq.com/
+Description: Easy to use Wordpress plugin to accept paypal payment for a service or product or donation in one click. Can be used in the sidebar, posts and pages.
+License: GPL2
+*/
 
 //Slug - wpapp
 
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')){//Exit if accessed directly
     exit;
 }
 
-define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION', '4.9');
+define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION', '4.9.2');
 define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL', plugins_url('', __FILE__));
 
 include_once('shortcode_view.php');
@@ -91,7 +91,7 @@ function Paypal_payment_accept() {
     $output .= '<input type="hidden" name="business" value="'.esc_attr($paypal_email).'" />';
     $output .= '<input type="hidden" name="item_name" value="'.esc_attr($paypal_subject).'" />';
     $output .= '<input type="hidden" name="currency_code" value="'.esc_attr($payment_currency).'" />';
-    $output .= '<span class="payment_subject"><strong>'.esc_attr($paypal_subject).'</strong></span><br /><br />';
+    $output .= '<div class="wpapp_payment_subject"><span class="payment_subject"><strong>'.esc_attr($paypal_subject).'</strong></span></div>';
     $output .= '<select id="amount" name="amount" class="">';
     $output .= '<option value="'.esc_attr($value1).'">'.esc_attr($itemName1).'</option>';
     if (!empty($value2)) {
@@ -114,21 +114,18 @@ function Paypal_payment_accept() {
 
     // Show other amount text box
     if ($wp_pp_show_other_amount == '1') {
-        $output .= '<br /><br /><strong>Other Amount:</strong>';
-        $output .= '<br /><br /><input type="number" min="1" step="any" name="other_amount" title="Other Amount" value="" style="max-width:60px;" />';
+        $output .= '<div class="wpapp_other_amount_label"><strong>Other Amount:</strong></div>';
+        $output .= '<div class="wpapp_other_amount_input"><input type="number" min="1" step="any" name="other_amount" title="Other Amount" value="" class="wpapp_other_amt_input" style="max-width:80px;" /></div>';
     }
 
     // Show the reference text box
     if ($wp_pp_show_ref_box == '1') {
-        $output .= '<br /><br /><strong>'.esc_attr($wp_pp_ref_title).' :</strong>';
+        $output .= '<div class="wpapp_ref_title_label"><strong>'.esc_attr($wp_pp_ref_title).':</strong></div>';
         $output .= '<input type="hidden" name="on0" value="'.apply_filters('wp_pp_button_reference_name','Reference').'" />';
-        $output .= '<br /><input type="text" name="os0" maxlength="60" value="'.apply_filters('wp_pp_button_reference_value','').'" class="wp_pp_button_reference" />';
+        $output .= '<div class="wpapp_ref_value"><input type="text" name="os0" maxlength="60" value="'.apply_filters('wp_pp_button_reference_value','').'" class="wp_pp_button_reference" /></div>';
     }
 
-    $output .= '<br /><br />
-        <input type="hidden" name="no_shipping" value="0" />
-        <input type="hidden" name="no_note" value="1" />
-        <input type="hidden" name="bn" value="TipsandTricks_SP" />';
+    $output .= '<input type="hidden" name="no_shipping" value="0" /><input type="hidden" name="no_note" value="1" /><input type="hidden" name="bn" value="TipsandTricks_SP" />';
     
     if (!empty($wp_pp_return_url)) {
         $output .= '<input type="hidden" name="return" value="' . esc_url($wp_pp_return_url) . '" />';
@@ -136,7 +133,10 @@ function Paypal_payment_accept() {
         $output .='<input type="hidden" name="return" value="' . home_url() . '" />';
     }
 
+    $output .= '<div class="wpapp_payment_button">';
     $output .= '<input type="image" src="'.esc_url($payment_button).'" name="submit" alt="Make payments with payPal - it\'s fast, free and secure!" />';
+    $output .= '</div>';
+    
     $output .= '</form>';
     $output .= '</div>';
     $output .= <<<EOT
