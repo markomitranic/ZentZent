@@ -4,15 +4,36 @@
 	min-height: 700px;
 	display: flex;
 
+	@media (max-width: $small) {
+		flex-wrap: wrap;
+	}
+
 	#sidebar {
 		width: 210px;
+
+	    @media (max-width: $small) {
+	        width: 100%;
+	    }
+	    @media (max-width: $mobile) {
+			order: 2;
+		}
 	}
 	#main {
 	   	width: calc(100% - 320px);
    		margin-left: 110px;
 
+   		@media (max-width: $small) {
+		    width: 100%;
+		    box-sizing: border-box;
+		    padding: 0 60px 50px 60px;
+		    margin: 0 auto;
+   		}
+   		@media (max-width: $mobile) {
+		    padding: 0 20px 50px 20px;
+   		}
+
    		.post-hero {
-		    margin-bottom: 80px;
+		    margin-bottom: 40px;
 		    
    			img {
 				max-width: 100%;
@@ -21,7 +42,7 @@
 
    			p {
 				font-style: italic;
-			    font-size: 170%;
+			    font-size: 20px;
 			    color: $dark-gray;
 			    margin: 20px 0 40px 0;
    			}

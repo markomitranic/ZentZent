@@ -1,11 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700);
+// @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700);
+@import 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext';
+
 body {
-	font-family: 'Crimson Text',Georgia, serif;
+    font-family: 'PT Serif', serif;
+	// font-family: 'Crimson Text',Georgia, serif;
 	color: $dark-gray;
+    background-color: $bgcolor;
 }
 
+
 h1 {
-    font-size: 150%;
+    font-size: 24px;
+    line-height: 26px;
     text-transform: uppercase;
     margin: 20px 0;
 }

@@ -1,7 +1,7 @@
 #footer {
     margin: 0 auto;
     padding: 0;
-    background-image: url(/images/footer-background.png);
+    background-image: url(../images/footer-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom left;
@@ -9,9 +9,13 @@
     line-height: 30px;
     text-shadow: 0px 0px 1px rgba(156, 156, 156, 1);
 
+    a {
+        font-size: 90%;
+    }
     // Reset the link color
     a:hover {
         text-decoration: underline;
+        color: #444;
     }
 	.wrapper {
 	    height: 195px;
@@ -22,9 +26,24 @@
 	    margin: 0 auto;
         padding-top: 40px;
 
+        @media (max-width: $large) {
+            width: 100%;
+            flex-wrap: wrap;
+            height: auto;
+        }
+
         nav {
             width: 200px;
             text-align: right;
+
+            @media (max-width: $medium) {
+                width: 150px;
+            }
+            @media (max-width: $small) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 40px;
+            }
 
             ul {
                 width: auto;
@@ -41,6 +60,18 @@
         .footer-contact {
             width: 450px;
 
+            @media (max-width: $medium) {
+                width: 430px;
+            }
+            @media (max-width: $small) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 40px;
+              address {
+                font-size: 80%;
+                }
+            }
+
             address {
                 letter-spacing: 1px;
             }
@@ -48,6 +79,14 @@
         .social-sharing {
             width: 140px;
             text-align: right;
+
+            @media (max-width: $small) {
+                width: 100%;
+                margin-bottom: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
             li {
                 float: right;

@@ -2,18 +2,29 @@
 	font-size: 18px;
     line-height: 30px;
 
-    a {
-	    background-color: rgba(58,220,179,0.2);
-	    padding: 0 4px 2px 4px;
-
-		&:hover {
-			background-color: rgba(29, 148, 118, 0.2);
-		}
+	.wp-caption {
+	    max-width: 100%!important;
 	}
 
+	p img, img {
+		max-width: 100%!important;
+    	height: auto;
+    	margin-bottom: 40px;
+	}
+    a {
+	    border-bottom: 0px solid blue;
+    	color: blue;
+
+		&:hover {
+			border-bottom: 2px solid blue;
+		}
+	}
+	h1 {
+		text-transform: none;
+	}
 	h2 {
-	    font-size: 120%;
-		text-transform: uppercase;
+	    font-size: 20px;
+		text-transform: none;
 		margin: 30px 0; 
 	}
 
@@ -39,7 +50,7 @@
 	}
 
 	p {
-
+	    margin: 0 0 15px 0;
 	}
 
 	code {
@@ -71,7 +82,7 @@
 	}
 	.aligncenter {
 	    display: block;
-	    margin: 0 auto 30px auto;
+        margin: 0 auto 80px auto;
 	}
 	.alignright {
 	    float: right;
@@ -196,4 +207,59 @@
     		font-size: 30px;
 	    }
 	}
+	.footnote {
+	    display: inline;
+
+		
+		span.footnote-number {
+		    color: blue;
+		    font-size: 12px;
+		    cursor: pointer;
+	        vertical-align: top;
+		}
+			
+		.footnote-body {
+			color: #444;
+			display:block;
+			opacity: 0;
+			transition: 0.2s all ease-in-out;
+		    position: fixed;
+			top: 50%;
+    		left: 60px;
+    		transform: translateY(-50%);
+		    width: 230px;
+		    // background-color: #e6e6e6;
+		    padding: 10px;
+		    text-align: right;
+		    font-style: italic;
+	    	font-size: 16px;
+    	    // box-shadow: 0px 0px 0px 0px #bfbfbf;
+
+    	    @media (max-width: $small) {
+    	    	display: none;
+    	    	position: static;
+			    height: 0px;
+			    overflow: hidden;
+			    margin: 0 auto;
+			    text-align: center;
+			    text-decoration: none!important;
+    	    }
+		}
+		&:hover {
+		    background-color: #7ca07c;
+
+			.footnote-body {
+				opacity: 1;
+			    // box-shadow: 0px 0px 14px 0px #bfbfbf;
+
+        	    @media (max-width: $small) {
+        	    	display: block;
+	    	    	position: static;
+				    height: auto;
+					opacity: 1;
+	    	    }
+			}
+		}
+	}
+
 }
