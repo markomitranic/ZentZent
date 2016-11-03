@@ -138,7 +138,7 @@ function my_theme_setup(){
 
 
 // OPEN GRAPH
-add_action('wp_head', 'fb_opengraph_meta');
+// add_action('wp_head', 'fb_opengraph_meta');
 function fb_opengraph_meta() {
   global $post;
   if (is_single()) {
