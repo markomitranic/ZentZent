@@ -1,3 +1,7 @@
+./wp-config.php
+
+
+
 
 # Created by https://www.gitignore.io/api/node,osx,windows
 
@@ -44,7 +48,8 @@ jspm_packages
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
