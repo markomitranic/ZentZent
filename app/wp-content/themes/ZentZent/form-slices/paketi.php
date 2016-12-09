@@ -51,12 +51,12 @@
 
 			if( $availableIssues ): 
 			foreach( $availableIssues as $post):  setup_postdata($post);
+			$title = $post->post_title;
 			$name = (get_field('ime_izdanja')) ? get_field('ime_izdanja') : '#';
 			$slug = $post->post_name;
-
 		?>
 			<p>
-				<label for="<?php echo $slug; ?>">&raquo; <?php the_title().' - '.$name ?> - Prezent</label>
+				<label for="<?php echo $slug; ?>">&raquo; <?php echo $title.' - '.$name; ?></label>
 				<span><?php _e( 'broj komada', 'zentzent' ); ?> <input type="number" name="<?php echo $slug; ?>" id="<?php echo $slug; ?>" value="0" min="0" max="10" required></span>
 			</p>
 		<?php endforeach; wp_reset_postdata(); endif; ?>

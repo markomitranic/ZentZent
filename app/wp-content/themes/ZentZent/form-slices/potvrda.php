@@ -15,43 +15,43 @@
 
 	switch ($request["drzava"]) {
 		case 'SRB':
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 238;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInRSD($request["paket"]);
 			$paypal = false;
 			$valuta = 'RSD';
 			break;
 		case 'HRV' :
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
 			$valuta = '€';
 			break;
 		case 'SVN' :
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
 			$valuta = '€';
 			break;
 		case 'BIH':
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
 			$valuta = '€';
 			break;
 		case 'MNE':
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
 			$valuta = '€';
 			break;
 		case 'MKD' :
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
 			$valuta = '€';
 			break;			
 		default:
-			$postarina = ($request["paket"] == 'digitalno') ? 0 : 10;
+			$postarina = ($request["paket"] == 'digitalno') ? 0 : 0;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
 			$valuta = '€';

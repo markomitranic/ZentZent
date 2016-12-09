@@ -28,26 +28,26 @@ function paypal_payment_options_page() {
         $value5 = filter_input(INPUT_POST, 'wp_pp_payment_value5', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $value6 = filter_input(INPUT_POST, 'wp_pp_payment_value6', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         
-        update_option('wp_paypal_widget_title_name', sanitize_text_field($_POST["wp_paypal_widget_title_name"]));
+        update_option('wp_paypal_widget_title_name', sanitize_text_field(stripslashes($_POST["wp_paypal_widget_title_name"])));
         update_option('wp_pp_payment_email', sanitize_email($_POST["wp_pp_payment_email"]));
         update_option('paypal_payment_currency', sanitize_text_field($_POST["paypal_payment_currency"]));
-        update_option('wp_pp_payment_subject', sanitize_text_field($_POST["wp_pp_payment_subject"]));
-        update_option('wp_pp_payment_item1', sanitize_text_field($_POST["wp_pp_payment_item1"]));
+        update_option('wp_pp_payment_subject', sanitize_text_field(stripslashes($_POST["wp_pp_payment_subject"])));
+        update_option('wp_pp_payment_item1', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item1"])));
         update_option('wp_pp_payment_value1', $value1);
-        update_option('wp_pp_payment_item2', sanitize_text_field($_POST["wp_pp_payment_item2"]));
+        update_option('wp_pp_payment_item2', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item2"])));
         update_option('wp_pp_payment_value2', $value2);
-        update_option('wp_pp_payment_item3', sanitize_text_field($_POST["wp_pp_payment_item3"]));
+        update_option('wp_pp_payment_item3', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item3"])));
         update_option('wp_pp_payment_value3', $value3);
-        update_option('wp_pp_payment_item4', sanitize_text_field($_POST["wp_pp_payment_item4"]));
+        update_option('wp_pp_payment_item4', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item4"])));
         update_option('wp_pp_payment_value4', $value4);
-        update_option('wp_pp_payment_item5', sanitize_text_field($_POST["wp_pp_payment_item5"]));
+        update_option('wp_pp_payment_item5', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item5"])));
         update_option('wp_pp_payment_value5', $value5);
-        update_option('wp_pp_payment_item6', sanitize_text_field($_POST["wp_pp_payment_item6"]));
+        update_option('wp_pp_payment_item6', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item6"])));
         update_option('wp_pp_payment_value6', $value6);
         update_option('payment_button_type', sanitize_text_field($_POST["payment_button_type"]));
         update_option('wp_pp_show_other_amount', ($_POST['wp_pp_show_other_amount'] == '1') ? '1' : '-1' );
         update_option('wp_pp_show_ref_box', ($_POST['wp_pp_show_ref_box'] == '1') ? '1' : '-1' );
-        update_option('wp_pp_ref_title', sanitize_text_field($_POST["wp_pp_ref_title"]));
+        update_option('wp_pp_ref_title', sanitize_text_field(stripslashes($_POST["wp_pp_ref_title"])));
         update_option('wp_pp_return_url', esc_url_raw(sanitize_text_field($_POST["wp_pp_return_url"])));
 
         echo '<div id="message" class="updated fade"><p><strong>';
