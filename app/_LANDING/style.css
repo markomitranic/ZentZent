@@ -1,0 +1,105 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.box {
+	box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    padding: 90px 130px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('img/B_01.jpg');
+    overflow: hidden;
+}
+.left-side {
+	width: 440px;
+    float: left;
+}
+.right-side {
+    width: 450px;
+    float: right;
+}
+
+/* Cover should have a shadow */
+.cover {
+	max-width: 100%;
+	-webkit-box-shadow: -26px 26px 21px 0px rgba(0,0,0,0.6);
+	-moz-box-shadow: -26px 26px 18px 0px rgba(0,0,0,0.6);
+	box-shadow: -26px 26px 18px 0px rgba(0,0,0,0.6);
+}
+
+/* Paragraph text needs some improvements */
+p {
+	font-family: 'Crimson Text', serif;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    line-height: 1.25rem;
+    text-shadow: 1px 1px rgba(56,56,56,0.3);
+    margin-bottom: 40px;
+}
+
+/* Mailing list button is special and needs to float */
+.mailing-list-button {
+    display: block;
+    height: 30px;
+    width: 150px;
+    margin: 70px auto 0 auto;
+    cursor: pointer;
+    border: 0;
+    border-bottom: 1px dotted transparent;
+    border-radius: 7px;
+    background-color: #ce1b28;
+    -webkit-box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.66);
+    box-shadow: inset 0px 0px 13px 0px rgba(0,0,0,0.66);
+    font-family: 'Share', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2rem;
+    transition: 0.3s all ease-in-out;
+}
+.mailing-list-button:hover {
+	color: #D2D2D2;
+    border-bottom: 1px dotted white;
+}
+
+
+@media (max-width: 1190px) {
+	.box {
+		padding: 70px;
+	}
+}
+@media (max-width: 1090px) {
+	.box {
+		padding: 70px 100px;
+	}
+	.box > div {
+		width: 360px;
+	}
+}
+@media (max-width: 980px) {
+	.box > div {
+		width: 90%;
+		margin: 0 auto 40px auto;
+		display: block;
+		float: initial;
+	}
+	.left-side {
+		text-align: center;
+	}
+	.left-side img {
+		width: auto;
+		max-width: 100%;
+		max-height: 80vh;
+	}
+}
+@media (max-width: 560px) {
+	.box {
+		padding: 50px 30px;
+	}
+}

@@ -1,17 +1,17 @@
 <p class="breadcrumbs">
-	<span>Poruči</span>
+	<span><?php _e( 'Poruči', 'zentzent' ); ?></span>
 	<span>></span>
-	<span class="active-breadcrumb">Podaci Kupca</span>
+	<span class="active-breadcrumb"><?php _e( 'Podaci Kupca', 'zentzent' ); ?></span>
 	<span>></span>
-	<span>Potvrda i plaćanje</span>
+	<span><?php _e( 'Potvrda i plaćanje', 'zentzent' ); ?></span>
 </p>
 
 <form action="." method="POST">
 
 	<div id="podacikupca">
-		<h2>PODACI</h2>
+		<h2><?php _e( 'PODACI', 'zentzent' ); ?></h2>
 		<div>
-			<label for="drzava">Država*</label>
+			<label for="drzava"><?php _e( 'Država*', 'zentzent' ); ?></label>
 			<select name="drzava" id="drzava" required>
 				<option value="AFG">Afghanistan</option>
 				<option value="ALA">Åland Islands</option>
@@ -265,40 +265,40 @@
 			</select>
 		</div>
 		<div class="pola">
-			<label for="ime">Ime*</label>
+			<label for="ime"><?php _e( 'Ime*', 'zentzent' ); ?></label>
 			<input type="text" name="ime"
 			id="ime" required>
 		</div>
 		<div class="pola">
-			<label for="prezime">Prezime*</label>
+			<label for="prezime"><?php _e( 'Prezime*', 'zentzent' ); ?></label>
 			<input type="text" name="prezime"
 			id="prezime" required>
 		</div>
 		<div>
-			<label for="company">Naziv kompanije/organizacije</label>
+			<label for="company"><?php _e( 'Naziv kompanije/organizacije', 'zentzent' ); ?></label>
 			<input type="text" name="company"
 			id="company">
 		</div>
 		<div>
-			<label for="adresa">Adresa*</label>
+			<label for="adresa"><?php _e( 'Adresa*', 'zentzent' ); ?></label>
 			<input type="text" name="adresa"
 			id="adresa" required>
 			<input type="text" name="adresa2"
 			id="adresa2">
 		</div>
 		<div>
-			<label for="grad">Grad*</label>
+			<label for="grad"><?php _e( 'Grad*', 'zentzent' ); ?></label>
 			<input type="text" name="grad"
 			id="grad" required>
 		</div>
 		<div>
-			<label for="postanskibroj">Poštanski broj*</label>
+			<label for="postanskibroj"><?php _e( 'Poštanski broj*', 'zentzent' ); ?></label>
 			<input type="text" name="postanskibroj"
 			id="postanskibroj" required>
 		</div>
 		<div class="drugaadresa-div">
 			<input type="checkbox" name="drugaadresa" id="drugaadresa">
-			<label for="drugaadresa">POŠALJI NA DRUGU ADRESU</label>
+			<label for="drugaadresa"><?php _e( 'POŠALJI NA DRUGU ADRESU', 'zentzent' ); ?></label>
 		</div>
 	</div>
 
@@ -307,7 +307,7 @@
 
 	<div id="drugaadresa-form">
 		<div>
-			<label for="drugaadresa-drzava">Država*</label>
+			<label for="drugaadresa-drzava"><?php _e( 'Država*', 'zentzent' ); ?></label>
 			<select name="drugaadresa-drzava" id="drugaadresa-drzava">
 				<option value="AFG">Afghanistan</option>
 				<option value="ALA">Åland Islands</option>
@@ -561,34 +561,34 @@
 			</select>
 		</div>
 		<div class="pola">
-			<label for="drugaadresa-ime">Ime*</label>
+			<label for="drugaadresa-ime"><?php _e( 'Ime*', 'zentzent' ); ?></label>
 			<input type="text" name="drugaadresa-ime"
 			id="drugaadresa-ime">
 		</div>
 		<div class="pola">
-			<label for="drugaadresa-prezime">Prezime*</label>
+			<label for="drugaadresa-prezime"><?php _e( 'Prezime*', 'zentzent' ); ?></label>
 			<input type="text" name="drugaadresa-prezime"
 			id="drugaadresa-prezime">
 		</div>
 		<div>
-			<label for="drugaadresa-company">Naziv kompanije/organizacije</label>
+			<label for="drugaadresa-company"><?php _e( 'Naziv kompanije/organizacije', 'zentzent' ); ?></label>
 			<input type="text" name="drugaadresa-company"
 			id="drugaadresa-company">
 		</div>
 		<div>
-			<label for="drugaadresa-adresa">Adresa*</label>
+			<label for="drugaadresa-adresa"><?php _e( 'Adresa*', 'zentzent' ); ?></label>
 			<input type="text" name="drugaadresa-adresa"
 			id="drugaadresa-adresa">
 			<input type="text" name="drugaadresa-adresa2"
 			id="drugaadresa-adresa2">
 		</div>
 		<div>
-			<label for="drugaadresa-grad">Grad*</label>
+			<label for="drugaadresa-grad"><?php _e( 'Grad*', 'zentzent' ); ?></label>
 			<input type="text" name="drugaadresa-grad"
 			id="drugaadresa-grad">
 		</div>
 		<div>
-			<label for="drugaadresa-postanskibroj">Poštanski broj*</label>
+			<label for="drugaadresa-postanskibroj"><?php _e( 'Poštanski broj*', 'zentzent' ); ?></label>
 			<input type="text" name="drugaadresa-postanskibroj"
 			id="drugaadresa-postanskibroj">
 		</div>
@@ -602,7 +602,7 @@
 			id="email" required>
 		</div>
 		<div>
-			<label for="ponovi-email">Ponovi Email*</label>
+			<label for="ponovi-email"><?php _e( 'Ponovi Email*', 'zentzent' ); ?></label>
 			<input type="text" id="ponovi-email" required>
 		</div>
 	</div>

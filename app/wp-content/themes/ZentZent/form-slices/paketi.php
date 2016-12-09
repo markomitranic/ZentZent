@@ -1,37 +1,38 @@
 <?php the_content(); ?>
 
+
 <p class="breadcrumbs">
-	<span class="active-breadcrumb">Poruči</span>
+	<span class="active-breadcrumb"><?php _e( 'Poruči', 'zentzent' ); ?></span>
 	<span>></span>
-	<span>Podaci Kupca</span>
+	<span><?php _e( 'Podaci Kupca', 'zentzent' ); ?></span>
 	<span>></span>
-	<span>Potvrda i plaćanje</span>
+	<span><?php _e( 'Potvrda i plaćanje', 'zentzent' ); ?></span>
 </p>
 
 <div id="odabirizdanja-boxes">
 	<div data-name="stampano" class="selected-box">
-		<h2>Štampano izdanje</h2>
+		<h2><?php _e( 'Štampano izdanje', 'zentzent' ); ?></h2>
 		<ul>
 			<li>&raquo; RSD <span>900</span></li>
 			<li>&raquo; EUR <span>10</span></li>
 		</ul>
 	</div>
 	<div data-name="digitalno">
-		<h2>Digitalno izdanje</h2>
+		<h2><?php _e( 'Digitalno izdanje', 'zentzent' ); ?></h2>
 		<ul>
 			<li>&raquo; RSD <span>300</span></li>
 			<li>&raquo; EUR <span>5</span></li>
 		</ul>
 	</div>
 	<div data-name="oba">
-		<h2>Štampano i digitalno izdanje</h2>
+		<h2><?php _e( 'Štampano i digitalno izdanje', 'zentzent' ); ?></h2>
 		<ul>
 			<li>&raquo; RSD <span>1000</span></li>
 			<li>&raquo; EUR <span>12</span></li>
 		</ul>
 	</div>
 	<div data-name="specijal">
-		<h2>Specijal paket (dva broja)</h2>
+		<h2><?php _e( 'Specijal paket (dva broja)', 'zentzent' ); ?></h2>
 		<ul>
 			<li>&raquo; RSD <span>1800</span></li>
 			<li>&raquo; EUR <span>20</span></li>
@@ -42,7 +43,7 @@
 <form action="." method="POST">
 
 	<div id="odaberibroj">
-		<h2>Izaberi broj</h2>
+		<h2><?php _e( 'Izaberi broj', 'zentzent' ); ?></h2>
 		<div>
 
 
@@ -56,16 +57,16 @@
 		?>
 			<p>
 				<label for="<?php echo $slug; ?>">&raquo; <?php the_title().' - '.$name ?> - Prezent</label>
-				<span>broj komada <input type="number" name="<?php echo $slug; ?>" id="<?php echo $slug; ?>" value="0" min="0" max="10" required></span>
+				<span><?php _e( 'broj komada', 'zentzent' ); ?> <input type="number" name="<?php echo $slug; ?>" id="<?php echo $slug; ?>" value="0" min="0" max="10" required></span>
 			</p>
 		<?php endforeach; wp_reset_postdata(); endif; ?>
 
 			<p class="specijal-paket" style="display:none;">
-				<label for="specijal-paket">&raquo; Broj specijal paketa</label>
-				<span>broj komada <input type="number" name="specijal-paket" id="specijal-paket" value="0" min="0" max="10" required></span>
+				<label for="specijal-paket">&raquo; <?php _e( 'Broj specijal paketa', 'zentzent' ); ?></label>
+				<span><?php _e( 'broj komada', 'zentzent' ); ?> <input type="number" name="specijal-paket" id="specijal-paket" value="0" min="0" max="10" required></span>
 			</p>
 		</div>
-		<p class="max-allowed">Ukoliko je vaša porudžbina veća od 10 komada po broju, molimo vas da nas <a href="/kontakt">kontaktirate</a>.</p>
+		<p class="max-allowed"><?php _e( 'Ukoliko je vaša porudžbina veća od 10 komada po broju, molimo vas da nas <a href="/kontakt">kontaktirate</a>.', 'zentzent' ); ?></p>
 	</div>
 
 

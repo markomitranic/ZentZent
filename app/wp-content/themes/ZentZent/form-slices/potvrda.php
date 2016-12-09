@@ -1,9 +1,9 @@
 <p class="breadcrumbs">
-	<span>Poruči</span>
+	<span><?php _e( 'Poruči', 'zentzent' ); ?></span>
 	<span>></span>
-	<span>Podaci Kupca</span>
+	<span><?php _e( 'Podaci Kupca', 'zentzent' ); ?></span>
 	<span>></span>
-	<span class="active-breadcrumb">Potvrda i plaćanje</span>
+	<span class="active-breadcrumb"><?php _e( 'Potvrda i plaćanje', 'zentzent' ); ?></span>
 </p>
 
 <?php 
@@ -18,36 +18,43 @@
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 238;
 			$price = priceInRSD($request["paket"]);
 			$paypal = false;
+			$valuta = 'RSD';
 			break;
 		case 'HRV' :
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
+			$valuta = '€';
 			break;
 		case 'SVN' :
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
+			$valuta = '€';
 			break;
 		case 'BIH':
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
+			$valuta = '€';
 			break;
 		case 'MNE':
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
+			$valuta = '€';
 			break;
 		case 'MKD' :
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 8;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
+			$valuta = '€';
 			break;			
 		default:
 			$postarina = ($request["paket"] == 'digitalno') ? 0 : 10;
 			$price = priceInEur($request["paket"]);
 			$paypal = true;
+			$valuta = '€';
 			break;
 	}
 
@@ -57,25 +64,25 @@
 
 <form action="<?php echo get_bloginfo('url'); ?>/poruci/thank-you/" method="POST" id="bigForm">	
 	<div id="pregled-porudzbine">
-		<h2>POTVRDA NARUDŽBINE</h2>
+		<h2><?php _e( 'POTVRDA NARUDŽBINE', 'zentzent' ); ?></h2>
 
 		<table>
 			<thead>
 				<tr>
-				<th>Odabrani broj</th>
-				<th>Količina</th>
-				<th>Poštarina</th>
-				<th>Ukupan iznos</th>
+				<th><?php _e( 'Odabrani broj', 'zentzent' ); ?></th>
+				<th><?php _e( 'Količina', 'zentzent' ); ?></th>
+				<th><?php _e( 'Poštarina', 'zentzent' ); ?></th>
+				<th><?php _e( 'Ukupan iznos', 'zentzent' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 			<!-- If it is special, shoq one thing. Else, we have a bunch of loops happen. -->
 			<?php if ($request["paket"] == "specijal") : ?>
 				<tr>
-					<td>Specijal Paket - Oba broja</td>
+					<td><?php _e( 'Specijal Paket - Oba broja', 'zentzent' ); ?></td>
 					<td><span><?php echo $request["specijal-paket"]; ?></span></td>
-					<td><span><?php echo $postarina; ?></span></td>
-					<td><span><?php echo ($price * $request["specijal-paket"]) + $postarina; ?></span></td>
+					<td><span><?php echo $postarina.' '.$valuta; ?></span></td>
+					<td><span><?php echo ($price * $request["specijal-paket"]) + $postarina.' '.$valuta; ?></span></td>
 				</tr>
 			<?php $fullPrice += ($price * $request["specijal-paket"]) + $postarina; ?>
 			<?php else : 
@@ -100,15 +107,15 @@
 						<td><?php echo $value['issue'].' - '.$value['name'] ?></td>
 						<td><span><?php echo $request[$value["slug"]]; ?></span></td>
 						<td></td>
-						<td><span><?php echo ($price * $request[$value["slug"]]); ?></span></td>
+						<td><span><?php echo ($price * $request[$value["slug"]]).' '.$valuta; ?></span></td>
 					</tr>
 					<?php $fullPrice += $price * $request[$value["slug"]]; ?>
 				<?php endforeach; ?>
 					<tr>
-						<td>Ukupno:</td>
+						<td><?php _e( 'Poruči', 'zentzent' ); ?>Ukupno:</td>
 						<td></td>
-						<td><span><?php echo $postarina; ?></span></td>
-						<td><span><?php echo ($fullPrice + $postarina); ?></span></td>
+						<td><span><?php echo $postarina.' '.$valuta; ?></span></td>
+						<td><span><?php echo ($fullPrice + $postarina).' '.$valuta; ?></span></td>
 					</tr>
 				<?php endif; ?>
 			</tbody>
@@ -116,19 +123,27 @@
 	</div>
 	
 	<div id="metoda-placanja">
-		<h2>METODA PLAĆANJA</h2>
+		<h2><?php _e( 'METODA PLAĆANJA', 'zentzent' ); ?></h2>
 
 		<?php if ($paypal) : ?>
 			<div id="paypal">
-				<h3>Paypal</h3>
-				<p>Bićete preusmereni na sajt Paypal-a. Ne morate da imate Paypal nalog, plaćanje možete izvršiti vašom kreditnom ili debitnom karticom.</p>
+				<h3><?php _e( 'Paypal', 'zentzent' ); ?></h3>
+				<p><?php _e( 'Bićete preusmereni na sajt Paypal-a. Ne morate da imate Paypal nalog, plaćanje možete izvršiti vašom kreditnom ili debitnom karticom.', 'zentzent' ); ?></p>
 			</div>
 		<?php else : ?>
-		<div id="srbija">
-			<h3>Pouzećem (Srbija)</h3>
-			<p>Dostava na adresu. Plaćanje u kešu.</p>
-		</div>
-	<?php endif; ?>
+
+			<?php if ($request["paket"] == "digitalno") : // check if it is digital issue?>
+				<div id="srbija">
+					<h3><?php _e( 'Uplata na žiro-račun', 'zentzent' ); ?></h3>
+					<p><?php _e( 'Broj računa: (imaćemo sutra)<br>Svrha uplate: Donacija časopisu Zent<br>Primalac: Udruženje građana Kulturni Kod, Mirijevski venac 4<br>Šifra plaćanja: 188 za gotovinske donacije i 288 za bezgotovinske donacije<br><br>Po izvršenoj uplati poslaćemo vam link za download.', 'zentzent' ); ?></p>
+				</div>
+			<?php else : // if serbia and not digital ?>
+				<div id="srbija">
+					<h3><?php _e( 'Pouzećem (Srbija)', 'zentzent' ); ?></h3>
+					<p><?php _e( 'Dostava na adresu. Plaćanje u kešu.', 'zentzent' ); ?></p>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
 
 	</div>
 

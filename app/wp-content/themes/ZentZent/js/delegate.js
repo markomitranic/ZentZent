@@ -6,10 +6,15 @@ jQuery(document).ready(function() {
 
 	$('.lang-nav li:nth-child(1) a').attr('href', srpski);
 	$('.lang-nav li:nth-child(2) a').attr('href', engleski);
+	$('.lang-nav-mobile li:nth-child(1) a').attr('href', srpski);
+	$('.lang-nav-mobile li:nth-child(2) a').attr('href', engleski);
 
 	// Check what menu item should get the class
 	if (document.documentElement.lang == "en-US") {
 		$('.lang-nav li:nth-child(1)').removeClass('active');
 		$('.lang-nav li:nth-child(2)').addClass('active');
+		$('.lang-nav-mobile li:nth-child(1)').removeClass('active');
+		$('.lang-nav-mobile li:nth-child(2)').addClass('active');
+		
 	}
 });

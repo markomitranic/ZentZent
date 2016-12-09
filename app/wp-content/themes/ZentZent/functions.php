@@ -115,6 +115,73 @@ function filter_ptags_on_images($content){
 }
 add_filter('the_content', 'filter_ptags_on_images');
 
+function override_mce_options($initArray) {
+  $opts = '*[*]';
+  $initArray['valid_elements'] = $opts;
+  $initArray['extended_valid_elements'] = $opts;
+  return $initArray;
+}
+add_filter('tiny_mce_before_init', 'override_mce_options'); 
+
+
+
+
+
+// Localization Support
+add_action('after_setup_theme', 'my_theme_setup');
+function my_theme_setup(){
+    load_theme_textdomain('zentzent', get_template_directory() . '/languages');
+}
+
+
+
+
+
+// OPEN GRAPH
+add_action('wp_head', 'fb_opengraph_meta');
+function fb_opengraph_meta() {
+  global $post;
+  if (is_single()) {
+    $image = get_field('hero_slika')['url'];
+  } else {
+    $image = 'http://www.zentmagazine.com/wp-content/uploads/2016/06/zent.jpg';
+  }
+
+  $description = my_excerpt( $post->post_content, $post->post_excerpt );
+  $description = strip_tags($description);
+  $description = str_replace("\"", "'", $description);
+
+  $output = '<meta property="og:title" content="'.get_the_title().'" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="'.$image.'" />
+  <meta property="og:url" content="'.get_the_permalink().'" />
+  <meta property="og:description" content="'.$description.'" />
+  <meta property="og:site_name" content="'.get_bloginfo('name').'" />';
+
+echo $output;
+
+}
+
+function my_excerpt($text, $excerpt){
+ if ($excerpt) return $excerpt;
+ $text = strip_shortcodes( $text );
+ $text = apply_filters('the_content', $text);
+ $text = str_replace(']]>', ']]&gt;', $text);
+ $text = strip_tags($text);
+ $excerpt_length = apply_filters('excerpt_length', 60);
+ $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+ $words = preg_split("/[\n]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+ if ( count($words) > $excerpt_length ) {
+   array_pop($words);
+   $text = implode(' ', $words);
+   $text = $text . $excerpt_more;
+ } else {
+   $text = implode(' ', $words);
+ }
+ return apply_filters('wp_trim_excerpt', $text, $excerpt);
+}
+
+
 
 
 ?>

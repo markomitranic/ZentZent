@@ -1,0 +1,169 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ZentZent Wordpress Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Jul 14 2016 22:06:37 GMT+0200 (CEST)\n"
+"POT-Revision-Date: Thu Jul 14 2016 22:30:48 GMT+0200 (CEST)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the template
+msgid "Obicna stranica Template"
+msgstr ""
+
+#: ../functions.php:57
+msgid "Header Menu"
+msgstr ""
+
+#: ../functions.php:58
+msgid "Footer Menu"
+msgstr ""
+
+#: ../functions.php:59
+msgid "Language Menu"
+msgstr ""
+
+#. Name of the template
+msgid "Sva izdanja Zenta Template"
+msgstr ""
+
+#. Name of the template
+msgid "Kategorija Zentoteka Template"
+msgstr ""
+
+#. Name of the template
+msgid "Sadrzaj Casopisa"
+msgstr ""
+
+#. Name of the template
+msgid "Podrzi nas Casopis"
+msgstr ""
+
+#. Name of the template
+msgid "ThankYou za kupovinu Zenta Template"
+msgstr ""
+
+#. Name of the template
+msgid "Porucivanje Zenta Template"
+msgstr ""
+
+#: ../form-slices/paketi.php:5 ../form-slices/podaci.php:2
+msgid "Poruči"
+msgstr ""
+
+#: ../form-slices/paketi.php:7 ../form-slices/podaci.php:4
+msgid "Podaci Kupca"
+msgstr ""
+
+#: ../form-slices/paketi.php:9 ../form-slices/podaci.php:6
+msgid "Potvrda i plaćanje"
+msgstr ""
+
+#: ../form-slices/paketi.php:14
+msgid "Štampano izdanje"
+msgstr ""
+
+#: ../form-slices/paketi.php:21
+msgid "Digitalno izdanje"
+msgstr ""
+
+#: ../form-slices/paketi.php:28
+msgid "Štampano i digitalno izdanje"
+msgstr ""
+
+#: ../form-slices/paketi.php:35
+msgid "Specijal paket (dva broja)"
+msgstr ""
+
+#: ../form-slices/paketi.php:46
+msgid "Izaberi broj"
+msgstr ""
+
+#: ../form-slices/paketi.php:60 ../form-slices/paketi.php:66
+msgid "broj komada"
+msgstr ""
+
+#: ../form-slices/paketi.php:65
+msgid "Broj specijal paketa"
+msgstr ""
+
+#: ../form-slices/paketi.php:69
+msgid ""
+"Ukoliko je vaša porudžbina veća od 10 komada po broju, molimo vas da nas <a "
+"href=\"/kontakt\">kontaktirate</a>."
+msgstr ""
+
+#: ../form-slices/podaci.php:12
+msgid "PODACI"
+msgstr ""
+
+#: ../form-slices/podaci.php:14 ../form-slices/podaci.php:310
+msgid "Država*"
+msgstr ""
+
+#: ../form-slices/podaci.php:268 ../form-slices/podaci.php:564
+msgid "Ime*"
+msgstr ""
+
+#: ../form-slices/podaci.php:273 ../form-slices/podaci.php:569
+msgid "Prezime*"
+msgstr ""
+
+#: ../form-slices/podaci.php:278 ../form-slices/podaci.php:574
+msgid "Naziv kompanije/organizacije"
+msgstr ""
+
+#: ../form-slices/podaci.php:283 ../form-slices/podaci.php:579
+msgid "Adresa*"
+msgstr ""
+
+#: ../form-slices/podaci.php:290 ../form-slices/podaci.php:586
+msgid "Grad*"
+msgstr ""
+
+#: ../form-slices/podaci.php:295 ../form-slices/podaci.php:591
+msgid "Poštanski broj*"
+msgstr ""
+
+#: ../form-slices/podaci.php:301
+msgid "POŠALJI NA DRUGU ADRESU"
+msgstr ""
+
+#: ../form-slices/podaci.php:605
+msgid "Ponovi Email*"
+msgstr ""
+
+#. Name of the theme
+msgid "ZentZent Wordpress Theme"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://github.com/markomitranic"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"This theme was created for Nova Iskra. In accordance with basic WP Codex "
+"principles."
+msgstr ""
+
+#. Author of the theme
+msgid "Marko Mitranic"
+msgstr ""
