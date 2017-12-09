@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<header id="header">
+<header id="header" style="background-image: url(<?=get_field('header_background', 18)?>);">
 	<div class="wrapper">
 		<?php wp_nav_menu( array( 'theme_location' => 'lang-menu' ) ); ?>
         <ul class="lang-nav">

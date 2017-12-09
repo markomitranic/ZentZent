@@ -15,8 +15,10 @@ the_post();
 		<?php include ('sidebar.php'); ?>
 	</section>
 	<main role="main" id="main">
+        <article class="page-content content-elipsis">
+			<?php the_content(); ?>
+        </article>
 		<section  class="category-big">
-
 
 			<?php
 

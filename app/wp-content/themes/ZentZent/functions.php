@@ -38,13 +38,15 @@ function custom_scripts() {
     wp_register_script( 'footnote', get_template_directory_uri() . '/js/footnote.js', ['jquery'], '1.0', true );
     wp_register_script( 'delegate', get_template_directory_uri() . '/js/delegate.js', ['jquery'], '1.0', true );
     wp_register_script( 'mobile_menu', get_template_directory_uri() . '/js/mobile-menu.js', ['jquery'], '1.0', true );
-    wp_register_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv-printshiv.min.js', ['jquery'], '3.7.3', true );
- 
+	wp_register_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv-printshiv.min.js', ['jquery'], '3.7.3', true );
+	wp_register_script( 'elipsis', get_template_directory_uri() . '/js/elipsis.js', ['jquery'], '1.0', true );
+
     // Then we need to enqueue them one by one to the theme:
     wp_enqueue_script( 'footnote' );
     wp_enqueue_script( 'delegate' );
     wp_enqueue_script( 'mobile_menu' );
-    wp_enqueue_script( 'html5shiv' );
+	wp_enqueue_script( 'html5shiv' );
+	wp_enqueue_script( 'elipsis' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
@@ -160,6 +162,14 @@ function fb_opengraph_meta() {
 
 echo $output;
 
+}
+
+// Clean up HTML from string to get an excerpt
+function excerpt($text, $length = 256) {
+	$text = wp_strip_all_tags($text);
+	$text = trim(preg_replace('/\s+/', ' ', $text)); // Remove new lines
+	$text = substr($text, 0, $length);
+	return $text;
 }
 
 function my_excerpt($text, $excerpt){

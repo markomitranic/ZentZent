@@ -1,0 +1,36 @@
+#main {
+  #blogroll {
+    article {
+      border-bottom: 1px solid gray;
+      margin: 0 auto 15px auto;
+      padding: 0px 15px 20px 15px;
+
+      & > h2 {
+        margin-right: 30px;
+        margin-bottom: 5px;
+      }
+      & > .author {
+        font-size: 12px;
+        border-bottom: 1px dashed gray;
+        width: 80%;
+        margin: 10px 0 10px 0;
+      }
+      & > div {
+        overflow: hidden;
+        padding: 10px 20px 10px 0;
+
+        img {
+          float: left;
+          max-width: 100px;
+          padding: 0 10px 10px 0;
+        }
+        p {
+
+        }
+      }
+      & > a {
+
+      }
+    }
+  }
+}

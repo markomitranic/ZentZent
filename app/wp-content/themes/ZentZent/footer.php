@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer"  style="background-image: url(<?=get_field('footer_background', 18)?>);">
 	<div class="wrapper">
 		<nav>
     		<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
