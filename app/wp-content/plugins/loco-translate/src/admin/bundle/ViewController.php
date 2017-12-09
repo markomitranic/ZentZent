@@ -22,7 +22,7 @@ class Loco_admin_bundle_ViewController extends Loco_admin_bundle_BaseController 
      */
     public function getHelpTabs(){
         return array (
-            __('Overview','default') => $this->view('tab-bundle-view'),
+            __('Overview','default') => $this->viewSnippet('tab-bundle-view'),
         );
     }
 
@@ -103,7 +103,7 @@ class Loco_admin_bundle_ViewController extends Loco_admin_bundle_BaseController 
         // always offer msginit even if we find out later we can't extract any strings
         $p['nav'][] = new Loco_mvc_ViewParams( array( 
             'href' => $this->getProjectLink('msginit', $project ),
-            'name' => __('New language','loco'),
+            'name' => __('New language','loco-translate'),
             'icon' => 'add',
         ) );
 
@@ -115,7 +115,7 @@ class Loco_admin_bundle_ViewController extends Loco_admin_bundle_BaseController 
                 $meta = Loco_gettext_Metadata::load($pot)->persistIfDirty( 0, true );
                 $p['nav'][] = new Loco_mvc_ViewParams( array( 
                     'href' => $this->getResourceLink('file-edit', $project, $meta ),
-                    'name' => __('Edit template','loco'),
+                    'name' => __('Edit template','loco-translate'),
                     'icon' => 'pencil',
                 ) );
             }
@@ -123,7 +123,7 @@ class Loco_admin_bundle_ViewController extends Loco_admin_bundle_BaseController 
             else {
                 $p['nav'][] = new Loco_mvc_ViewParams( array( 
                     'href' => $this->getProjectLink('xgettext', $project ),
-                    'name' => __('Create template','loco'),
+                    'name' => __('Create template','loco-translate'),
                     'icon' => 'add',
                 ) );
             }
@@ -174,7 +174,7 @@ class Loco_admin_bundle_ViewController extends Loco_admin_bundle_BaseController 
             $api = new Loco_api_WordPressTranslations;
             /* @var $locale Loco_Locale */
             foreach( $locales as $tag => $locale ){
-                $locale->fetchName($api) or $locale->buildName() or $locale->setName($tag);
+                $locale->ensureName($api);
             }
         }
         // collate as unique [PO,MO] pairs ensuring canonical template excluded
@@ -219,6 +219,7 @@ class Loco_admin_bundle_ViewController extends Loco_admin_bundle_BaseController 
             'meta' => $meta,
             'name' => $file->basename(),
             'time' => $file->modified(),
+            'type' => strtoupper( $file->extension() ),
             'todo' => $meta->countIncomplete(),
             'total' => $meta->getTotal(),
             // author / contrib

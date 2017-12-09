@@ -45,10 +45,16 @@ function paypal_payment_options_page() {
         update_option('wp_pp_payment_item6', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item6"])));
         update_option('wp_pp_payment_value6', $value6);
         update_option('payment_button_type', sanitize_text_field($_POST["payment_button_type"]));
-        update_option('wp_pp_show_other_amount', ($_POST['wp_pp_show_other_amount'] == '1') ? '1' : '-1' );
-        update_option('wp_pp_show_ref_box', ($_POST['wp_pp_show_ref_box'] == '1') ? '1' : '-1' );
+        update_option('wp_pp_show_other_amount', isset($_POST['wp_pp_show_other_amount']) ? '1' : '-1' );
+        update_option('wp_pp_show_ref_box', isset($_POST['wp_pp_show_ref_box']) ? '1' : '-1' );
         update_option('wp_pp_ref_title', sanitize_text_field(stripslashes($_POST["wp_pp_ref_title"])));
         update_option('wp_pp_return_url', esc_url_raw(sanitize_text_field($_POST["wp_pp_return_url"])));
+        
+        $cancel_url = esc_url_raw(sanitize_text_field($_POST["wp_pp_cancel_url"]));
+        if(empty($cancel_url)){
+            $cancel_url = home_url();
+        }
+        update_option('wp_pp_cancel_url', $cancel_url);
 
         echo '<div id="message" class="updated fade"><p><strong>';
         echo 'Options Updated!';
@@ -60,16 +66,16 @@ function paypal_payment_options_page() {
     ?>
 
     <div class=wrap>
-    <div id="poststuff"><div id="post-body">
+    <h2>Accept Paypal Payment Settings v<?php echo WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION; ?></h2>
 
-        <h2>Accept Paypal Payment Settings v<?php echo WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION; ?></h2>
+    <div id="poststuff"><div id="post-body">
 
         <div style="background: none repeat scroll 0 0 #ECECEC;border: 1px solid #CFCFCF;color: #363636;margin: 10px 0 15px;padding:15px;text-shadow: 1px 1px #FFFFFF;">
             For usage documentation and updates, please visit the plugin page at the following URL:<br />
             <a href="https://www.tipsandtricks-hq.com/wordpress-easy-paypal-payment-or-donation-accept-plugin-120" target="_blank">https://www.tipsandtricks-hq.com/wordpress-easy-paypal-payment-or-donation-accept-plugin-120</a>
         </div>
 
-        <form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+        <form method="post" action="">
             <?php wp_nonce_field('wp_accept_pp_payment_settings_update'); ?>
             
             <input type="hidden" name="info_update" id="info_update" value="true" />
@@ -77,13 +83,13 @@ function paypal_payment_options_page() {
             <div class="postbox">
             <h3 class="hndle"><label for="title">Plugin Usage</label></h3>
             <div class="inside">      
-                <p>There are a few ways you can use this plugin:</p>
+                <p>There are a few different ways you can use this plugin:</p>
                 <ol>
                     <li>Configure the options below and then add the shortcode <strong>[wp_paypal_payment]</strong> to a post or page (where you want the payment button)</li>
-                    <li>Call the function from a template file: <strong>&lt;?php echo Paypal_payment_accept(); ?&gt;</strong></li>
-                    <li>Use the <strong>WP Paypal Payment</strong> Widget from the Widgets menu</li>
-                    <li>Use the shortcode with custom parameter options to add multiple different payment widgets in different areas of the site.
+                    <li>Use the shortcode with custom parameter options to add multiple different payment widgets with different configuration.
                         <a href="https://www.tipsandtricks-hq.com/wordpress-easy-paypal-payment-or-donation-accept-plugin-120#shortcode_with_custom_parameters" target="_blank">View shortcode documentation</a></li>
+                    <li>Call the function from a template file: <strong>&lt;?php echo Paypal_payment_accept(); ?&gt;</strong></li>
+                    <li>Use the <strong>WP Paypal Payment</strong> Widget from the Widgets menu</li>                    
                 </ol>
             </div></div>
 
@@ -204,12 +210,23 @@ function paypal_payment_options_page() {
                             <br /><i>Enter a title for the Reference text box (ie. Your Web Address). The visitors will see this text.</i><br />
                         </td></tr>
 
-                    <tr valign="top"><td width="25%" align="left">
+                    <tr valign="top">
+                        <td width="25%" align="left">
                             <strong>Return URL from PayPal:</strong>
                         </td><td align="left">
                             <input name="wp_pp_return_url" type="text" size="60" value="<?php echo esc_url(get_option('wp_pp_return_url')); ?>"/>
                             <br /><i>Enter a return URL (could be a Thank You page). PayPal will redirect visitors to this page after Payment.</i><br />
-                        </td></tr>
+                        </td>
+                    </tr>
+                    
+                    <tr valign="top">
+                        <td width="25%" align="left">
+                            <strong>Cancel URL from PayPal:</strong>
+                        </td><td align="left">
+                            <input name="wp_pp_cancel_url" type="text" size="60" value="<?php echo esc_url(get_option('wp_pp_cancel_url')); ?>"/>
+                            <br /><i>Enter a cancel URL. PayPal will redirect visitors to this page if they click on the cancel link.</i><br />
+                        </td>
+                    </tr>
                     
                 </table>
 

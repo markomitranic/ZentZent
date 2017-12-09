@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Easy Paypal Payment Accept
-Version: v4.9.3
+Version: v4.9.5
 Plugin URI: https://www.tipsandtricks-hq.com/wordpress-easy-paypal-payment-or-donation-accept-plugin-120
 Author: Tips and Tricks HQ
 Author URI: https://www.tipsandtricks-hq.com/
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')){//Exit if accessed directly
     exit;
 }
 
-define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION', '4.9.3');
+define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION', '4.9.5');
 define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL', plugins_url('', __FILE__));
 
 include_once('shortcode_view.php');
@@ -39,6 +39,7 @@ function wp_pp_plugin_install() {
     add_option('wp_pp_show_ref_box', '1');
     add_option('wp_pp_ref_title', 'Your Email Address');
     add_option('wp_pp_return_url', home_url());
+    add_option('wp_pp_cancel_url', home_url());
 }
 
 register_activation_hook(__FILE__, 'wp_pp_plugin_install');
@@ -82,6 +83,7 @@ function Paypal_payment_accept() {
     $wp_pp_show_ref_box = get_option('wp_pp_show_ref_box');
     $wp_pp_ref_title = get_option('wp_pp_ref_title');
     $wp_pp_return_url = get_option('wp_pp_return_url');
+    $wp_pp_cancel_url = get_option('wp_pp_cancel_url');
 
     /* === Paypal form === */
     $output = '';
@@ -133,6 +135,10 @@ function Paypal_payment_accept() {
         $output .='<input type="hidden" name="return" value="' . home_url() . '" />';
     }
 
+    if (!empty($wp_pp_cancel_url)) {
+        $output .= '<input type="hidden" name="cancel_return" value="' . esc_url($wp_pp_cancel_url) . '" />';
+    }
+    
     $output .= '<div class="wpapp_payment_button">';
     $output .= '<input type="image" src="'.esc_url($payment_button).'" name="submit" alt="Make payments with payPal - it\'s fast, free and secure!" />';
     $output .= '</div>';
